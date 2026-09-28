@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Life Cycle of Stars | AstroLearn</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+
+.course-container{
+    max-width:1200px;
+    margin:130px auto;
+    padding:40px;
+}
+
+.course-hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    background:#111c2f;
+    padding:50px;
+    border-radius:25px;
+}
+
+.course-content{
+    flex:1;
+}
+
+.course-content h1{
+    font-size:3.2rem;
+    color:#fbbf24;
+    margin-bottom:20px;
+}
+
+.course-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.course-image{
+    flex:1;
+    text-align:center;
+}
+
+.course-image img{
+    width:100%;
+    max-width:500px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.course-badges{
+    margin-top:25px;
+}
+
+.course-badge{
+    display:inline-block;
+    background:#2563eb;
+    padding:8px 18px;
+    border-radius:30px;
+    margin:5px;
+    font-size:14px;
+}
+
+.course-section{
+    margin-top:50px;
+    background:#111c2f;
+    padding:40px;
+    border-radius:25px;
+}
+
+.course-section h2{
+    color:#60a5fa;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.course-section p{
+    color:#d1d5db;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.learning-list li{
+    margin:15px 0;
+    color:#d1d5db;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#2563eb;
+    transition:width .4s ease;
+}
+
+.lesson-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    background:#162338;
+    padding:25px;
+    margin:20px 0;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.lesson-card:hover{
+    transform:translateX(8px);
+    background:#1e3a5f;
+}
+
+.lesson-card h3{
+    margin-bottom:8px;
+}
+
+.lesson-card p{
+    color:#cbd5e1;
+}
+
+.lesson-btn{
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:30px;
+    white-space:nowrap;
+}
+
+.lesson-card.completed{
+    background:#14532d;
+}
+
+.lesson-card.completed .lesson-btn{
+    background:#16a34a;
+}
+
+.exam-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    background:#162338;
+    padding:30px;
+    margin-top:30px;
+    border-radius:20px;
+    border:1px solid #263a59;
+    transition:.3s;
+}
+
+.exam-card h3{
+    color:#fbbf24;
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.exam-card p{
+    color:#cbd5e1;
+}
+
+.exam-card.unlocked{
+    background:#12291f;
+    border:1px solid #22c55e;
+}
+
+.exam-card.unlocked h3{
+    color:#4ade80;
+}
+
+@media(max-width:900px){
+
+.course-hero{
+    flex-direction:column;
+}
+
+.course-content h1{
+    font-size:2.5rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.exam-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.lesson-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+
+<li>
+<a href="../../index.html">Home</a>
+</li>
+
+<li>
+<a href="../../pages/courses.html">Learn</a>
+</li>
+
+<li>
+<a href="../../pages/explore.html">Explore</a>
+</li>
+
+<li>
+<a href="../../pages/quiz.html">Quiz</a>
+</li>
+
+<li>
+<a href="../../pages/about.html">About</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<div class="course-container">
+
+
+<!-- ========================= -->
+<!-- COURSE HERO -->
+<!-- ========================= -->
+
+<section class="course-hero">
+
+<div class="course-content">
+
+<h1>
+⭐ Life Cycle of Stars
+</h1>
+
+<p>
+
+Explore the incredible journey of stars — from their birth
+inside enormous clouds of gas and dust to their final stages
+as white dwarfs, neutron stars, or black holes.
+
+</p>
+
+
+<div class="course-badges">
+
+<span class="course-badge">
+📈 Intermediate
+</span>
+
+<span class="course-badge">
+📚 8 Lessons
+</span>
+
+<span class="course-badge">
+🏆 Certificate
+</span>
+
+</div>
+
+</div>
+
+
+<div class="course-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Eagle%20Nebula%20from%20ESO.jpg"
+alt="Life Cycle of Stars">
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- ABOUT -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+📖 About This Course
+</h2>
+
+<p>
+
+Stars are constantly changing.
+
+They are born from enormous clouds of gas and dust,
+spend most of their lives producing energy through
+nuclear fusion, and eventually reach spectacular
+final stages.
+
+In this course, you will follow the complete stellar
+life cycle and discover how a star's mass determines
+its evolution and ultimate fate.
+
+You will also learn how astronomers use observations,
+physics, and mathematical models to understand stars
+that are millions or even billions of light-years away.
+
+</p>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- WHAT YOU WILL LEARN -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+🎯 What You Will Learn
+</h2>
+
+<ul class="learning-list">
+
+<li>
+How stars form inside molecular clouds
+</li>
+
+<li>
+Why nuclear fusion makes stars shine
+</li>
+
+<li>
+What happens during the main sequence stage
+</li>
+
+<li>
+How stars become red giants and supergiants
+</li>
+
+<li>
+How massive stars end their lives as supernovae
+</li>
+
+<li>
+How white dwarfs form
+</li>
+
+<li>
+How neutron stars and pulsars form
+</li>
+
+<li>
+How stellar-mass black holes can form
+</li>
+
+<li>
+How a star's mass determines its final fate
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PROGRESS -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+📊 Course Progress
+</h2>
+
+<p id="progressText">
+
+0 / 8 Lessons Completed
+
+</p>
+
+<div class="progress-container">
+
+<div
+class="progress-fill"
+id="courseProgress">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- LESSONS -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+📚 Course Lessons
+</h2>
+
+
+<!-- LESSON 1 -->
+
+<div class="lesson-card" id="lesson1">
+
+<div>
+
+<h3>
+⭐ Lesson 1: What Are Stars?
+</h3>
+
+<p>
+Learn what stars are, what they are made of,
+why they shine, and how astronomers study them.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson1.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 2 -->
+
+<div class="lesson-card" id="lesson2">
+
+<div>
+
+<h3>
+🌫️ Lesson 2: The Birth of Stars
+</h3>
+
+<p>
+Discover how enormous clouds of gas and dust
+collapse to form new stars.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson2.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 3 -->
+
+<div class="lesson-card" id="lesson3">
+
+<div>
+
+<h3>
+🔥 Lesson 3: Main Sequence Stars
+</h3>
+
+<p>
+Explore the longest stage of a star's life and
+learn how hydrogen fusion powers stars.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson3.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson-card" id="lesson4">
+
+<div>
+
+<h3>
+🔴 Lesson 4: Red Giants & Supergiants
+</h3>
+
+<p>
+Learn what happens when stars exhaust the
+hydrogen in their cores.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson4.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson-card" id="lesson5">
+
+<div>
+
+<h3>
+💥 Lesson 5: Supernovae
+</h3>
+
+<p>
+Discover the powerful explosions that mark
+the dramatic deaths of many massive stars.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson5.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson-card" id="lesson6">
+
+<div>
+
+<h3>
+⚪ Lesson 6: White Dwarfs
+</h3>
+
+<p>
+Explore the dense stellar remnants left behind
+by stars similar to the Sun.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson6.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson-card" id="lesson7">
+
+<div>
+
+<h3>
+🌌 Lesson 7: Neutron Stars
+</h3>
+
+<p>
+Learn about extremely dense stellar remnants
+and fascinating objects such as pulsars.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson7.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson-card" id="lesson8">
+
+<div>
+
+<h3>
+⚫ Lesson 8: Black Holes & Stellar Remnants
+</h3>
+
+<p>
+Discover how the most massive stars can leave
+behind black holes and other extraordinary remnants.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson8.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SKILLS -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+🧠 Skills You Will Gain
+</h2>
+
+<ul class="learning-list">
+
+<li>
+Understanding the physics of stellar evolution
+</li>
+
+<li>
+Connecting a star's mass to its evolutionary path
+</li>
+
+<li>
+Understanding nuclear fusion and stellar energy
+</li>
+
+<li>
+Identifying different types of stellar remnants
+</li>
+
+<li>
+Interpreting basic astronomical observations
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FINAL EXAM -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+📝 Final Exam
+</h2>
+
+<div
+class="exam-card"
+id="examCard">
+
+<div>
+
+<h3>
+🔒 Course 3 Final Exam
+</h3>
+
+<p id="examStatus">
+
+Complete all 8 lessons to unlock the final exam.
+
+</p>
+
+</div>
+
+
+<a
+class="lesson-btn"
+id="examBtn">
+
+🔒 Exam Locked
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- CERTIFICATE -->
+<!-- ========================= -->
+
+<section class="course-section">
+
+<h2>
+🏆 Certificate Requirements
+</h2>
+
+<p>
+
+To earn your AstroLearn certificate, you must complete
+all eight lessons and successfully pass the final exam
+with a score of at least 70%.
+
+</p>
+
+</section>
+
+
+</div>
+
+
+
+<footer class="footer">
+
+<h3>
+🌌 AstroLearn
+</h3>
+
+<p>
+Your Journey Through Space Begins Here.
+</p>
+
+</footer>
+
+
+
+<script>
+
+/* ========================================= */
+/* COURSE 3 LESSON DATA */
+/* ========================================= */
+
+const lessonData = [
+
+{
+id: "course3Lesson1",
+card: "lesson1",
+file: "lesson1.html"
+},
+
+{
+id: "course3Lesson2",
+card: "lesson2",
+file: "lesson2.html"
+},
+
+{
+id: "course3Lesson3",
+card: "lesson3",
+file: "lesson3.html"
+},
+
+{
+id: "course3Lesson4",
+card: "lesson4",
+file: "lesson4.html"
+},
+
+{
+id: "course3Lesson5",
+card: "lesson5",
+file: "lesson5.html"
+},
+
+{
+id: "course3Lesson6",
+card: "lesson6",
+file: "lesson6.html"
+},
+
+{
+id: "course3Lesson7",
+card: "lesson7",
+file: "lesson7.html"
+},
+
+{
+id: "course3Lesson8",
+card: "lesson8",
+file: "lesson8.html"
+}
+
+];
+
+
+let completedLessons = 0;
+
+
+/* ========================================= */
+/* CHECK COMPLETED LESSONS */
+/* ========================================= */
+
+lessonData.forEach(lesson => {
+
+const card =
+document.getElementById(lesson.card);
+
+const button =
+card.querySelector(".lesson-btn");
+
+
+if(localStorage.getItem(lesson.id) === "true"){
+
+completedLessons++;
+
+card.classList.add("completed");
+
+button.innerHTML = "✓ Completed";
+
+button.href = lesson.file;
+
+}
+
+});
+
+
+/* ========================================= */
+/* UPDATE PROGRESS */
+/* ========================================= */
+
+const percentage =
+(completedLessons / 8) * 100;
+
+document.getElementById("courseProgress")
+.style.width = percentage + "%";
+
+
+document.getElementById("progressText")
+.textContent =
+completedLessons + " / 8 Lessons Completed";
+
+
+/* ========================================= */
+/* FINAL EXAM */
+/* ========================================= */
+
+const examCard =
+document.getElementById("examCard");
+
+const examBtn =
+document.getElementById("examBtn");
+
+const examStatus =
+document.getElementById("examStatus");
+
+
+if(completedLessons === 8){
+
+examCard.classList.add("unlocked");
+
+examBtn.innerHTML =
+"📝 Take Final Exam";
+
+examBtn.href =
+"exam.html";
+
+examStatus.innerHTML =
+"🎉 All 8 lessons completed! Your final exam is ready.";
+
+}
+
+</script>
+
+
+<script src="../../script.js"></script>
+
+</body>
+
+</html>

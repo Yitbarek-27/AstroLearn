@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AstroLearn | Explore the Universe</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <h2 class="logo">🌌 AstroLearn</h2>
+
+        <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="courses.html">Learn</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+
+<div class="auth-buttons">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="signup.html" class="signup-btn">Sign Up</a>
+</div>
+
+</nav>
+</header>
+
+
+<main class="explore-page">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="explore-hero">
+
+    <div class="explore-hero-content">
+
+        <span class="explore-label">
+            🌌 COSMIC DISCOVERY CENTER
+        </span>
+
+        <h1>
+            Explore the Universe
+        </h1>
+
+        <p>
+            Go beyond the classroom and discover the objects,
+            missions, scales, and mysteries that make our universe
+            extraordinary.
+        </p>
+
+        <div class="explore-search">
+
+            <span>🔭</span>
+
+            <input
+                type="text"
+                id="exploreSearch"
+                placeholder="Search stars, galaxies, black holes..."
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COSMIC OBJECTS
+===================================================== -->
+
+<section class="explore-section">
+
+    <div class="explore-section-title">
+
+        <span>🔭 DISCOVER</span>
+
+        <h2>Cosmic Objects</h2>
+
+        <p>
+            Explore some of the most fascinating objects
+            found throughout space.
+        </p>
+
+    </div>
+
+
+    <div class="cosmic-grid">
+
+
+        <!-- STAR -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+                <img src="https://images-assets.nasa.gov/image/art002e012588/art002e012588~large.jpg" alt="Stars and Milky Way">
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">STELLAR OBJECT</span>
+
+                <h3>⭐ Stars</h3>
+
+                <p>
+                    Massive spheres of plasma that produce
+                    energy through nuclear fusion.
+                </p>
+                <a
+                    href="https://science.nasa.gov/universe/stars/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Learn More About Stars →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="⭐ Stars"
+                    data-text="Stars are enormous balls of hot plasma. In their cores, nuclear fusion converts lighter elements into heavier ones and releases enormous amounts of energy."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- EXOPLANETS -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img
+                    src="https://th.bing.com/th/id/R.83ddf8b89bcabca4ac138aa861148076?rik=OycgtffdhJe8mA&pid=ImgRaw&r=0"
+                    alt="Exoplanet"
+                >
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">PLANETARY WORLD</span>
+
+                <h3>🪐 Exoplanets</h3>
+
+                <p>
+                    Worlds orbiting stars beyond our Solar System.
+                </p>
+                <a
+                    href="https://science.nasa.gov/exoplanets/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Exoplanets →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="🪐 Exoplanets"
+                    data-text="An exoplanet is a planet outside our Solar System. Astronomers discover them using methods such as transits and radial velocity measurements."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- GALAXIES -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img src="https://www.techeblog.com/wp-content/uploads/2022/12/hubble-space-telescope-barred-spiral-galaxy-ngc-6956.jpg" alt="Galaxy">
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">COSMIC STRUCTURE</span>
+
+                <h3>🌌 Galaxies</h3>
+
+                <p>
+                    Vast systems containing stars, gas, dust,
+                    and dark matter.
+                </p>
+                <a
+                    href="https://science.nasa.gov/universe/galaxies/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Galaxies →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="🌌 Galaxies"
+                    data-text="Galaxies are enormous gravitationally bound systems containing stars, planets, gas, dust, and dark matter. They can contain millions to trillions of stars."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- BLACK HOLES -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img
+                    src="https://images-assets.nasa.gov/image/PIA16695/PIA16695~large.jpg"
+                    alt="Black hole artist concept"
+                >
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">EXTREME OBJECT</span>
+
+                <h3>🕳️ Black Holes</h3>
+
+                <p>
+                    Regions of spacetime where gravity is
+                    extraordinarily strong.
+                </p>
+                <a
+                    href="https://science.nasa.gov/universe/black-holes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Learn More About Black Holes →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="🕳️ Black Holes"
+                    data-text="A black hole is a region of spacetime whose gravity is so strong that anything crossing its event horizon cannot escape back out, including light."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEBULAE -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img src="https://dailygalaxy.com/wp-content/uploads/2024/11/Illustration-of-the-local-hot-bubble.jpg" alt="Nebula">
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">STELLAR NURSERY</span>
+
+                <h3>☁️ Nebulae</h3>
+
+                <p>
+                    Clouds of gas and dust where stars can
+                    form and evolve.
+                </p>
+                <a
+                    href="https://science.nasa.gov/universe/nebulae/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Nebulae →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="☁️ Nebulae"
+                    data-text="Nebulae are large clouds of gas and dust. Some are stellar nurseries where gravity causes material to collapse and form new stars."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- COMETS -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img src="https://i.pinimg.com/736x/bc/d4/54/bcd4541fe545f58542bddac19dcf9b5b.jpg" alt="Comet">
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">SMALL BODY</span>
+
+                <h3>☄️ Comets</h3>
+
+                <p>
+                    Icy bodies that can develop glowing comas
+                    and tails near the Sun.
+                </p>
+                <a
+                    href="https://science.nasa.gov/solar-system/comets/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Comets →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="☄️ Comets"
+                    data-text="Comets are icy bodies made of frozen gases, rock, and dust. When they approach the Sun, heating can create a glowing coma and tail."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- MOONS -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img
+                    src="https://images-assets.nasa.gov/image/PIA00405/PIA00405~large.jpg"
+                    alt="Moon"
+                >
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">NATURAL SATELLITE</span>
+
+                <h3>🌙 Moons</h3>
+
+                <p>
+                    Natural satellites orbiting planets,
+                    dwarf planets, and other bodies.
+                </p>
+                <a
+                    href="https://science.nasa.gov/solar-system/moons/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Moons →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="🌙 Moons"
+                    data-text="Moons are natural satellites that orbit planets, dwarf planets, and sometimes asteroids. They come in many sizes and geological forms."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ASTEROIDS -->
+
+        <article class="cosmic-card">
+
+            <div class="cosmic-image">
+
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e42f4d52-63d9-4dc0-a3c2-d0ec6ddc4552/djbs3bh-c6d96762-e861-4b6c-8353-01c774e06009.jpg/v1/fill/w_1182,h_676,q_70,strp/space_art___asteroid_belt_by_muttleybear16_djbs3bh-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzMyIiwicGF0aCI6IlwvZlwvZTQyZjRkNTItNjNkOS00ZGMwLWEzYzItZDBlYzZkZGM0NTUyXC9kamJzM2JoLWM2ZDk2NzYyLWU4NjEtNGI2Yy04MzUzLTAxYzc3NGUwNjAwOS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.rqcvHEQSVqyvlXwod_zZPOV9RDNn387RX3kx9uW7PXM" alt="Asteroid">
+
+            </div>
+
+            <div class="cosmic-content">
+
+                <span class="cosmic-type">SMALL BODY</span>
+
+                <h3>☄️ Asteroids</h3>
+
+                <p>
+                    Rocky or metallic bodies left over from
+                    the early Solar System.
+                </p>
+                <a
+                    href="https://science.nasa.gov/solar-system/asteroids/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learn-more-link">
+                    🔗 Explore Asteroids →
+                </a>
+
+                <button
+                    class="explore-info-btn"
+                    data-title="☄️ Asteroids"
+                    data-text="Asteroids are rocky or metallic objects that orbit the Sun. Many are remnants from the formation of the Solar System."
+                >
+                    Discover →
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COSMIC SCALE
+===================================================== -->
+
+<section class="scale-section">
+
+    <div class="explore-section-title">
+
+        <span>📏 UNDERSTAND THE SCALE</span>
+
+        <h2>From Earth to the Universe</h2>
+
+        <p>
+            The universe is unimaginably large. Explore how
+            different cosmic structures fit together.
+        </p>
+
+    </div>
+
+
+    <div class="cosmic-scale">
+
+        <div class="scale-item active-scale">
+
+            <div class="scale-icon">🌍</div>
+
+            <h3>Earth</h3>
+
+            <p>Our home planet</p>
+
+        </div>
+
+
+        <div class="scale-line"></div>
+
+
+        <div class="scale-item">
+
+            <div class="scale-icon">☀️</div>
+
+            <h3>Solar System</h3>
+
+            <p>Our planetary neighborhood</p>
+
+        </div>
+
+
+        <div class="scale-line"></div>
+
+
+        <div class="scale-item">
+
+            <div class="scale-icon">🌌</div>
+
+            <h3>Milky Way</h3>
+
+            <p>Our galaxy</p>
+
+        </div>
+
+
+        <div class="scale-line"></div>
+
+
+        <div class="scale-item">
+
+            <div class="scale-icon">✨</div>
+
+            <h3>Galaxy Groups</h3>
+
+            <p>Galaxies bound together</p>
+
+        </div>
+
+
+        <div class="scale-line"></div>
+
+
+        <div class="scale-item">
+
+            <div class="scale-icon">🌠</div>
+
+            <h3>Observable Universe</h3>
+
+            <p>The cosmic horizon</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SPACE MISSIONS
+===================================================== -->
+
+<section class="explore-section missions-explore">
+
+    <div class="explore-section-title">
+
+        <span>🚀 HUMANITY IN SPACE</span>
+
+        <h2>Space Missions</h2>
+
+        <p>
+            Discover missions that have changed our understanding
+            of the universe.
+        </p>
+
+    </div>
+
+
+    <div class="mission-explore-grid">
+
+
+        <article class="mission-explore-card">
+
+            <div class="mission-icon">🔭</div>
+
+            <h3>James Webb Space Telescope</h3>
+
+            <p>
+                An infrared space telescope studying galaxies,
+                stars, planets, and the early universe.
+            </p>
+            <a href="https://science.nasa.gov/mission/webb/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
+                🔗 Learn More about JWST →
+            </a>
+
+            <span class="mission-tag">
+                DEEP SPACE OBSERVATORY
+            </span>
+
+        </article>
+
+
+        <article class="mission-explore-card">
+
+            <div class="mission-icon">🌌</div>
+
+            <h3>Hubble Space Telescope</h3>
+
+            <p>
+                One of humanity's most influential space
+                observatories, observing the universe across
+                multiple wavelengths.
+            </p>
+            <a href="https://science.nasa.gov/mission/hubble/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
+                🔗 Learn More about Hubble →
+            </a>
+
+            <span class="mission-tag">
+                SPACE TELESCOPE
+            </span>
+
+        </article>
+
+
+        <article class="mission-explore-card">
+
+            <div class="mission-icon">🚀</div>
+
+            <h3>Voyager</h3>
+
+            <p>
+                Twin spacecraft launched to explore the outer
+                Solar System and interstellar space.
+            </p>
+            <a href="https://science.nasa.gov/mission/voyager/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
+                🔗 Learn More about Voyager →
+            </a>
+
+            <span class="mission-tag">
+                INTERSTELLAR EXPLORATION
+            </span>
+
+        </article>
+
+
+        <article class="mission-explore-card">
+
+            <div class="mission-icon">🌙</div>
+
+            <h3>Artemis</h3>
+
+            <p>
+                NASA's program for lunar exploration and
+                developing capabilities for future human
+                deep-space missions.
+            </p>
+            <a href="https://www.nasa.gov/artemis/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
+                🔗 Learn More about Artemis →
+            </a>
+
+            <span class="mission-tag">
+                HUMAN SPACEFLIGHT
+            </span>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COSMIC MYSTERY
+===================================================== -->
+
+<section class="mystery-section">
+
+    <div class="mystery-content">
+
+        <span>❓ ONE OF THE BIGGEST MYSTERIES</span>
+
+        <h2>What is Dark Matter?</h2>
+
+        <p>
+            Something invisible appears to hold galaxies together.
+            It does not emit, absorb, or reflect light in the way
+            ordinary matter does — yet its gravitational influence
+            can be seen across the universe.
+        </p>
+
+        <div class="mystery-facts">
+
+            <div>
+                <strong>🔭 Evidence</strong>
+                <span>Galaxy rotation & gravitational lensing</span>
+            </div>
+
+            <div>
+                <strong>🌌 Where is it?</strong>
+                <span>Spread throughout galaxies and cosmic structures</span>
+            </div>
+
+            <div>
+                <strong>🧩 The Mystery</strong>
+                <span>We know its effects, but not what it actually is</span>
+            </div>
+
+        </div>
+
+        <a href="https://science.nasa.gov/universe/dark-matter/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="learn-more-link">
+            🔗 Explore the Mystery →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DID YOU KNOW
+===================================================== -->
+
+<section class="fact-section">
+
+    <div class="fact-card">
+
+        <span>💡 DID YOU KNOW?</span>
+
+        <h2 id="cosmicFact">
+            Light from distant galaxies can travel for billions
+            of years before reaching our telescopes.
+        </h2>
+
+        <button
+            id="newFactBtn"
+            class="course-btn">
+            ✨ Another Fact
+        </button>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    id="cosmicModal"
+    class="cosmic-modal">
+
+    <div class="cosmic-modal-content">
+
+        <button
+            id="closeModal"
+            class="modal-close">
+            ×
+        </button>
+
+        <span>🔭 COSMIC DISCOVERY</span>
+
+        <h2 id="modalTitle">
+            Cosmic Object
+        </h2>
+
+        <p id="modalText">
+            Discover something amazing about the universe.
+        </p>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    <h3>🌌 AstroLearn</h3>
+
+    <p>
+        Your Journey Through Space Begins Here.
+    </p>
+
+    <p>
+        © 2026 AstroLearn. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+const searchInput =
+    document.getElementById("exploreSearch");
+
+const cosmicCards =
+    document.querySelectorAll(".cosmic-card");
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+if(searchInput){
+
+    searchInput.addEventListener("input", function(){
+
+        const search =
+            searchInput.value.toLowerCase().trim();
+
+        cosmicCards.forEach(card => {
+
+            const text =
+                card.innerText.toLowerCase();
+
+            if(text.includes(search)){
+
+                card.style.display = "flex";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* =====================================================
+   COSMIC OBJECT MODAL
+===================================================== */
+
+const modal =
+    document.getElementById("cosmicModal");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalText =
+    document.getElementById("modalText");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+
+document
+.querySelectorAll(".explore-info-btn")
+.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        modalTitle.textContent =
+            button.dataset.title;
+
+        modalText.textContent =
+            button.dataset.text;
+
+        modal.classList.add("show");
+
+    });
+
+});
+
+
+closeModal.addEventListener("click", function(){
+
+    modal.classList.remove("show");
+
+});
+
+
+modal.addEventListener("click", function(event){
+
+    if(event.target === modal){
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+
+/* =====================================================
+   COSMIC FACTS
+===================================================== */
+
+const facts = [
+    "A day on Venus is longer than a year on Venus.",
+    "A light-year is a unit of distance, not time.",
+    "The Milky Way contains hundreds of billions of stars.",
+    "The Sun contains about 99.8% of the mass of our Solar System.",
+    "Neutron stars are among the densest objects known in the universe.",
+    "Saturn's rings are made mostly of ice and rocky particles.",
+    "Mars has the largest volcano in the Solar System: Olympus Mons.",
+    "The universe is expanding.",
+    "Some galaxies are billions of light-years away from Earth.",
+    "Astronomers can observe galaxies as they looked billions of years ago.",
+    
+    "A teaspoon of neutron-star material would have an enormous mass on Earth.",
+    "The Sun's light takes about 8 minutes and 20 seconds to reach Earth.",
+    "Jupiter is the largest planet in our Solar System.",
+    "Mercury has the shortest year of any planet in the Solar System.",
+    "Uranus rotates on its side compared with most planets.",
+    "A year on Neptune lasts about 165 Earth years.",
+    "Mars has two small moons: Phobos and Deimos.",
+    "Earth is the only known planet with confirmed life.",
+    "The Moon is slowly moving away from Earth.",
+    "Our Solar System is located in one of the Milky Way's spiral arms.",
+    
+    "Black holes can form when massive stars collapse.",
+    "The center of the Milky Way contains a supermassive black hole.",
+    "Black holes do not simply act like cosmic vacuum cleaners.",
+    "Nothing that crosses a black hole's event horizon can return to the outside.",
+    "Some black holes are billions of times more massive than the Sun.",
+    "Light can be bent by gravity through gravitational lensing.",
+    "Dark matter does not appear to emit or reflect light.",
+    "Dark energy is associated with the accelerating expansion of the universe.",
+    "We know dark matter exists mainly because of its gravitational effects.",
+    "Scientists still do not know the fundamental nature of dark matter.",
+    
+    "Stars are enormous spheres of hot plasma.",
+    "Stars produce energy through nuclear fusion.",
+    "The Sun is a relatively ordinary star.",
+    "A star's color gives information about its surface temperature.",
+    "Blue stars are generally hotter than red stars.",
+    "Stars can live for millions to billions of years.",
+    "Massive stars generally have much shorter lives than low-mass stars.",
+    "Supernovae can create and distribute heavy elements into space.",
+    "Some stars end their lives as white dwarfs.",
+    "Some massive stellar remnants become neutron stars or black holes.",
+    
+    "Nebulae are enormous clouds of gas and dust in space.",
+    "Some nebulae are regions where new stars are forming.",
+    "Planetary nebulae are created by dying low- to intermediate-mass stars.",
+    "The Eagle Nebula contains regions of active star formation.",
+    "The Orion Nebula is one of the closest major star-forming regions to Earth.",
+    "Nebulae can glow when nearby stars energize their gas.",
+    "Dust clouds can block visible light while glowing in infrared wavelengths.",
+    "Supernova remnants can expand through space for thousands of years.",
+    
+    "There are more stars in the observable universe than grains of sand on Earth's beaches.",
+    "The observable universe is about 93 billion light-years across.",
+    "The universe is approximately 13.8 billion years old.",
+    "The cosmic microwave background is leftover radiation from the early universe.",
+    "The cosmic microwave background has a temperature of about 2.725 K.",
+    "The oldest light we can observe comes from the early universe.",
+    "Galaxies are organized into groups, clusters, and larger cosmic structures.",
+    "The universe contains a gigantic network of galaxies called the cosmic web.",
+    "Most of the universe is made up of dark energy.",
+    "Ordinary matter makes up only a small fraction of the universe.",
+    
+    "The James Webb Space Telescope observes the universe mainly in infrared wavelengths.",
+    "The Hubble Space Telescope has observed galaxies billions of light-years away.",
+    "Voyager 1 is one of the most distant human-made spacecraft.",
+    "The Voyager spacecraft carry a golden record containing sounds and images from Earth.",
+    "NASA's Artemis program aims to return humans to the Moon.",
+    "The International Space Station travels around Earth roughly every 90 minutes.",
+    "Mars rovers can study rocks and soil without humans being physically present.",
+    "Space telescopes allow astronomers to observe wavelengths blocked by Earth's atmosphere.",
+    
+    "Comets are made largely of ice, dust, and rocky material.",
+    "A comet's tail generally points away from the Sun because of solar wind and sunlight.",
+    "Asteroids are rocky or metallic objects that orbit the Sun.",
+    "The asteroid belt lies mainly between Mars and Jupiter.",
+    "Some asteroids are remnants left over from the formation of the Solar System.",
+    "Some comets take hundreds or even thousands of years to orbit the Sun.",
+    
+    "There are thousands of confirmed exoplanets outside our Solar System.",
+    "Some exoplanets orbit their stars in only a few days.",
+    "Astronomers can detect some exoplanets when they pass in front of their stars.",
+    "The first confirmed exoplanets were discovered around a pulsar.",
+    "Some exoplanets are so close to their stars that their surfaces may be extremely hot.",
+    
+    "Time passes differently depending on gravity and relative motion.",
+    "Gravity can affect the path of light.",
+    "Space itself can expand, increasing the distance between faraway galaxies.",
+    "Looking farther into space also means looking farther back in time.",
+    "The night sky is a record of the universe's history.",
+    "We cannot see beyond the observable universe because light from farther regions has not reached us.",
+    "Some galaxies are moving away from us because the universe is expanding.",
+    "The farther away a galaxy is, the more its light is generally redshifted.",
+    
+    "The Sun will eventually run out of hydrogen in its core.",
+    "The Milky Way and Andromeda galaxies are expected to interact in the distant future.",
+    "Our Solar System formed about 4.6 billion years ago.",
+    "Earth's atmosphere protects life from much of the Sun's harmful radiation.",
+    "Auroras are produced when charged particles interact with Earth's atmosphere.",
+    "The International Space Station can be visible from Earth without a telescope under suitable conditions.",
+    "Astronauts aboard the ISS experience microgravity rather than zero gravity.",
+    "Space is not completely empty; it contains gas, dust, radiation, and particles."
+];
+
+
+const factElement =
+    document.getElementById("cosmicFact");
+
+const newFactButton =
+    document.getElementById("newFactBtn");
+
+
+newFactButton.addEventListener("click", function(){
+
+    const randomIndex =
+        Math.floor(Math.random() * facts.length);
+
+    factElement.textContent =
+        facts[randomIndex];
+
+});
+
+
+</script>
+<script src="../script.js"></script>
+</body>
+</html>

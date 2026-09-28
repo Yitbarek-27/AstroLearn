@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn | Solar System Explorer Final Exam</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+
+.exam-page{
+    max-width:1000px;
+    margin:130px auto 60px;
+    padding:40px;
+}
+
+.exam-header{
+    background:#111c2f;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.exam-header h1{
+    color:#fbbf24;
+    font-size:2.8rem;
+    margin-bottom:15px;
+}
+
+.exam-header p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.question{
+    background:#111c2f;
+    padding:30px;
+    margin:25px 0;
+    border-radius:20px;
+}
+
+.question h3{
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.option{
+    display:block;
+    background:#162338;
+    color:#d1d5db;
+    padding:15px;
+    margin:10px 0;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#1e3a5f;
+}
+
+.option input{
+    margin-right:10px;
+}
+
+.submit-btn{
+    display:block;
+    margin:40px auto;
+    padding:15px 40px;
+    border:none;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#1d4ed8;
+}
+
+.result{
+    display:none;
+    background:#111c2f;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    margin-top:30px;
+}
+
+.result h2{
+    color:#fbbf24;
+}
+
+.result p{
+    color:#d1d5db;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.success{
+    color:#4ade80 !important;
+}
+
+.fail{
+    color:#f87171 !important;
+}
+
+.certificate-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 30px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+.locked-message{
+    background:#111c2f;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.locked-message h2{
+    color:#fbbf24;
+    margin-bottom:15px;
+}
+
+.locked-message p{
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 30px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../pages/courses.html">Learn</a></li>
+<li><a href="../../pages/explore.html">Explore</a></li>
+<li><a href="../../pages/quiz.html">Quiz</a></li>
+<li><a href="../../pages/about.html">About</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<div class="exam-page" id="examPage">
+
+<!-- EXAM CONTENT WILL BE SHOWN ONLY AFTER ALL 8 LESSONS -->
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   COURSE 2 FINAL EXAM
+   ========================================================= */
+
+
+/* ---------- CHECK LESSON COMPLETION ---------- */
+
+const requiredLessons = [
+    "course2Lesson1",
+    "course2Lesson2",
+    "course2Lesson3",
+    "course2Lesson4",
+    "course2Lesson5",
+    "course2Lesson6",
+    "course2Lesson7",
+    "course2Lesson8"
+];
+
+
+let completedLessons = 0;
+
+
+requiredLessons.forEach(function(lesson){
+
+    if(localStorage.getItem(lesson) === "true"){
+        completedLessons++;
+    }
+
+});
+
+
+const examPage = document.getElementById("examPage");
+
+
+/* ---------- LOCK EXAM IF LESSONS ARE NOT COMPLETE ---------- */
+
+if(completedLessons < 8){
+
+    examPage.innerHTML = `
+
+        <div class="locked-message">
+
+            <h2>🔒 Final Exam Locked</h2>
+
+            <p>
+                You have completed
+                <strong>${completedLessons}/8</strong>
+                lessons.
+            </p>
+
+            <p>
+                Please complete all 8 lessons
+                before taking the Solar System Explorer
+                final examination.
+            </p>
+
+            <a href="course.html" class="back-btn">
+                📚 Back to Course
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ---------- SHOW EXAM ---------- */
+
+else{
+
+    examPage.innerHTML = `
+
+    <div class="exam-header">
+
+        <h1>🚀 Solar System Explorer</h1>
+
+        <p>Final Examination</p>
+
+        <p>
+            This exam tests your understanding of
+            the eight lessons in the Solar System Explorer course.
+        </p>
+
+        <p>
+            <strong>
+                20 Questions • Passing Score: 70%
+            </strong>
+        </p>
+
+    </div>
+
+
+    <form id="examForm">
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question">
+
+        <h3>1. Approximately how old is the Solar System?</h3>
+
+        <label class="option">
+            <input type="radio" name="q1" value="a">
+            1.5 billion years
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="b">
+            4.6 billion years
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="c">
+            10 billion years
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="d">
+            13.8 billion years
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question">
+
+        <h3>2. What is the main source of the Sun's energy?</h3>
+
+        <label class="option">
+            <input type="radio" name="q2" value="a">
+            Chemical combustion
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="b">
+            Nuclear fusion
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="c">
+            Radioactive decay
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="d">
+            Solar wind
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="question">
+
+        <h3>3. Which planet is the smallest in the Solar System?</h3>
+
+        <label class="option">
+            <input type="radio" name="q3" value="a">
+            Mars
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="b">
+            Venus
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="c">
+            Mercury
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="d">
+            Earth
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 4 -->
+
+    <div class="question">
+
+        <h3>4. Why is Venus hotter than Mercury?</h3>
+
+        <label class="option">
+            <input type="radio" name="q4" value="a">
+            Venus is closer to the Sun
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="b">
+            Venus has a powerful greenhouse effect
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="c">
+            Venus has no atmosphere
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="d">
+            Venus rotates faster
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 5 -->
+
+    <div class="question">
+
+        <h3>
+            5. Which planet is known for having
+            a global magnetic field despite its small size?
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q5" value="a">
+            Mercury
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="b">
+            Venus
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="c">
+            Mars
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="d">
+            Neptune
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 6 -->
+
+    <div class="question">
+
+        <h3>6. Which planet has the largest volcano in the Solar System?</h3>
+
+        <label class="option">
+            <input type="radio" name="q6" value="a">
+            Earth
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="b">
+            Venus
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="c">
+            Mars
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="d">
+            Mercury
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 7 -->
+
+    <div class="question">
+
+        <h3>7. Which planet is the largest in the Solar System?</h3>
+
+        <label class="option">
+            <input type="radio" name="q7" value="a">
+            Saturn
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="b">
+            Jupiter
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="c">
+            Neptune
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="d">
+            Uranus
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 8 -->
+
+    <div class="question">
+
+        <h3>8. What are Saturn's rings primarily made of?</h3>
+
+        <label class="option">
+            <input type="radio" name="q8" value="a">
+            Fire and plasma
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="b">
+            Rock and ice particles
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="c">
+            Liquid water
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="d">
+            Hydrogen gas
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 9 -->
+
+    <div class="question">
+
+        <h3>9. Which two planets are classified as ice giants?</h3>
+
+        <label class="option">
+            <input type="radio" name="q9" value="a">
+            Jupiter and Saturn
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="b">
+            Earth and Mars
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="c">
+            Uranus and Neptune
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="d">
+            Mercury and Venus
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 10 -->
+
+    <div class="question">
+
+        <h3>10. Which of the following is a dwarf planet?</h3>
+
+        <label class="option">
+            <input type="radio" name="q10" value="a">
+            Europa
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="b">
+            Titan
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="c">
+            Pluto
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="d">
+            Ganymede
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 11 -->
+
+    <div class="question">
+
+        <h3>
+            11. What is the region beyond Neptune
+            containing many icy objects called?
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q11" value="a">
+            Asteroid Belt
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q11" value="b">
+            Kuiper Belt
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q11" value="c">
+            Solar Core
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q11" value="d">
+            Magnetosphere
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 12 -->
+
+    <div class="question">
+
+        <h3>12. What is an exoplanet?</h3>
+
+        <label class="option">
+            <input type="radio" name="q12" value="a">
+            A moon outside the Solar System
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q12" value="b">
+            A planet outside our Solar System
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q12" value="c">
+            A distant asteroid
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q12" value="d">
+            A type of comet
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 13 -->
+
+    <div class="question">
+
+        <h3>13. What does the transit method detect?</h3>
+
+        <label class="option">
+            <input type="radio" name="q13" value="a">
+            A planet's magnetic field
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q13" value="b">
+            A small decrease in a star's brightness
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q13" value="c">
+            A galaxy's rotation
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q13" value="d">
+            A black hole's temperature
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 14 -->
+
+    <div class="question">
+
+        <h3>14. What is a light-year?</h3>
+
+        <label class="option">
+            <input type="radio" name="q14" value="a">
+            A measurement of time
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q14" value="b">
+            The distance light travels in one year
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q14" value="c">
+            The age of a star
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q14" value="d">
+            The speed of light
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 15 -->
+
+    <div class="question">
+
+        <h3>15. What galaxy contains our Solar System?</h3>
+
+        <label class="option">
+            <input type="radio" name="q15" value="a">
+            Andromeda Galaxy
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q15" value="b">
+            Whirlpool Galaxy
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q15" value="c">
+            Milky Way Galaxy
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q15" value="d">
+            Triangulum Galaxy
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 16 -->
+
+    <div class="question">
+
+        <h3>16. What is a nebula?</h3>
+
+        <label class="option">
+            <input type="radio" name="q16" value="a">
+            A cloud of gas and dust
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q16" value="b">
+            A type of planet
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q16" value="c">
+            A black hole
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q16" value="d">
+            A galaxy cluster
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 17 -->
+
+    <div class="question">
+
+        <h3>
+            17. What can happen when a massive star
+            reaches the end of its life?
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q17" value="a">
+            It becomes a planet
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q17" value="b">
+            It can explode as a supernova
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q17" value="c">
+            It becomes an asteroid
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q17" value="d">
+            It disappears instantly
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 18 -->
+
+    <div class="question">
+
+        <h3>18. Why are space telescopes useful?</h3>
+
+        <label class="option">
+            <input type="radio" name="q18" value="a">
+            They are closer to the Sun
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q18" value="b">
+            They avoid some effects of Earth's atmosphere
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q18" value="c">
+            They make stars brighter
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q18" value="d">
+            They travel faster than light
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 19 -->
+
+    <div class="question">
+
+        <h3>
+            19. What does the redshift of distant galaxies
+            help astronomers study?
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q19" value="a">
+            The expansion of the universe
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q19" value="b">
+            The temperature of Earth's oceans
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q19" value="c">
+            The size of the Moon
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q19" value="d">
+            The age of Mercury
+        </label>
+
+    </div>
+
+
+    <!-- QUESTION 20 -->
+
+    <div class="question">
+
+        <h3>
+            20. Why can astronomers see distant galaxies
+            as they appeared long ago?
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q20" value="a">
+            Galaxies stop moving
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q20" value="b">
+            Light takes time to travel through space
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q20" value="c">
+            Telescopes create old images
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q20" value="d">
+            Stars move backward in time
+        </label>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="submit-btn"
+        onclick="submitExam()">
+
+        📝 Submit Final Exam
+
+    </button>
+
+
+    </form>
+
+
+    <div class="result" id="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultText"></p>
+
+        <div id="certificateArea"></div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   EXAM ANSWERS
+   ========================================================= */
+
+const answers = {
+
+    q1:"b",
+    q2:"b",
+    q3:"c",
+    q4:"b",
+    q5:"a",
+    q6:"c",
+    q7:"b",
+    q8:"b",
+    q9:"c",
+    q10:"c",
+    q11:"b",
+    q12:"b",
+    q13:"b",
+    q14:"b",
+    q15:"c",
+    q16:"a",
+    q17:"b",
+    q18:"b",
+    q19:"a",
+    q20:"b"
+
+};
+
+
+/* =========================================================
+   SUBMIT EXAM
+   ========================================================= */
+
+function submitExam(){
+
+    let score = 0;
+
+    let unanswered = 0;
+
+
+    for(let question in answers){
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+
+        if(!selected){
+
+            unanswered++;
+
+        }
+        else if(selected.value === answers[question]){
+
+            score++;
+
+        }
+
+    }
+
+
+    /* Don't submit if questions are unanswered */
+
+    if(unanswered > 0){
+
+        alert(
+            `Please answer all 20 questions before submitting. You still have ${unanswered} unanswered question(s).`
+        );
+
+        return;
+
+    }
+
+
+    const percentage =
+        Math.round((score / 20) * 100);
+
+
+    const result =
+        document.getElementById("result");
+
+
+    result.style.display = "block";
+
+
+    /* ---------- PASSED ---------- */
+
+    if(percentage >= 70){
+
+    /* Save exam completion */
+
+    localStorage.setItem(
+        "course2ExamPassed",
+        "true"
+    );
+
+    localStorage.setItem(
+        "course2ExamScore",
+        score
+    );
+
+    localStorage.setItem(
+        "course2Name",
+        "Solar System Explorer"
+    );
+
+    localStorage.setItem(
+        "course2MissionName",
+        "Mission 2"
+    );
+
+    /* Go directly to Congratulations page */
+
+    window.location.href = "congratulations.html";
+
+}
+
+
+    /* ---------- FAILED ---------- */
+
+    else{
+
+        document.getElementById("resultTitle").textContent =
+            "📚 Keep Learning!";
+
+
+        document.getElementById("resultTitle").className =
+            "fail";
+
+
+        document.getElementById("resultText").textContent =
+            `You scored ${score}/20 (${percentage}%). You need 70% to pass. Review the lessons and try again.`;
+
+
+        document.getElementById("certificateArea").innerHTML = `
+
+            <p style="margin-top:20px;color:#cbd5e1;">
+                You can review the lessons and retake the exam.
+            </p>
+
+        `;
+
+    }
+
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+</script>
+
+
+<script src="../../script.js"></script>
+
+</body>
+
+</html>

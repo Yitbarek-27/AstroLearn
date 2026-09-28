@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course 4 Final Exam | AstroLearn</title>
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+.exam-page{
+    max-width:1000px;
+    margin:0 auto;
+    padding:120px 20px 60px;
+}
+
+.exam-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.exam-header h1{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.exam-header p{
+    color:#b8c7e6;
+    line-height:1.7;
+}
+
+.exam-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin:30px 0 40px;
+}
+
+.exam-info-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+}
+
+.exam-info-card h3{
+    margin-bottom:8px;
+}
+
+.exam-info-card p{
+    color:#b8c7e6;
+}
+
+.question-box{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:22px;
+}
+
+.question-box h3{
+    margin-bottom:18px;
+    line-height:1.5;
+}
+
+.option{
+    display:block;
+    padding:13px 16px;
+    margin:10px 0;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.option input{
+    margin-right:10px;
+}
+
+.submit-area{
+    text-align:center;
+    margin-top:35px;
+}
+
+.exam-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    margin-top:30px;
+    padding:30px;
+    border-radius:18px;
+    background:rgba(255,255,255,.07);
+}
+
+.result h2{
+    margin-bottom:12px;
+}
+
+.retry-btn{
+    margin-top:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:50px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+@media(max-width:700px){
+    .exam-info{
+        grid-template-columns:1fr;
+    }
+
+    .exam-header h1{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../pages/courses.html">Learn</a></li>
+<li><a href="../../pages/explore.html">Explore</a></li>
+<li><a href="../../pages/quiz.html">Quiz</a></li>
+<li><a href="../../pages/about.html">About</a></li>
+</ul>
+</nav>
+</header>
+
+<main class="exam-page">
+
+<div class="exam-header">
+<h1>🌌 Course 4 Final Exam</h1>
+<p>
+Test your knowledge of galaxies, their structures, evolution,
+supermassive black holes, galaxy clusters, and the cosmic web.
+</p>
+</div>
+
+<div class="exam-info">
+<div class="exam-info-card">
+<h3>📝 Questions</h3>
+<p>20 Multiple Choice</p>
+</div>
+
+<div class="exam-info-card">
+<h3>🎯 Passing Score</h3>
+<p>70% (14/20)</p>
+</div>
+
+<div class="exam-info-card">
+<h3>🏆 Reward</h3>
+<p>Certificate</p>
+</div>
+</div>
+
+<form id="examForm">
+
+<div class="question-box">
+<h3>1. What is a galaxy?</h3>
+<label class="option"><input type="radio" name="q1" value="A"> A. A single star</label>
+<label class="option"><input type="radio" name="q1" value="B"> B. A collection of stars, gas, dust, and dark matter held together by gravity</label>
+<label class="option"><input type="radio" name="q1" value="C"> C. A planet with many moons</label>
+<label class="option"><input type="radio" name="q1" value="D"> D. A group of only black holes</label>
+</div>
+
+<div class="question-box">
+<h3>2. Which is one of the three major galaxy types?</h3>
+<label class="option"><input type="radio" name="q2" value="A"> A. Spiral</label>
+<label class="option"><input type="radio" name="q2" value="B"> B. Planetary</label>
+<label class="option"><input type="radio" name="q2" value="C"> C. Cometary</label>
+<label class="option"><input type="radio" name="q2" value="D"> D. Lunar</label>
+</div>
+
+<div class="question-box">
+<h3>3. Why are spiral galaxy arms often bright and blue?</h3>
+<label class="option"><input type="radio" name="q3" value="A"> A. They contain only black holes</label>
+<label class="option"><input type="radio" name="q3" value="B"> B. They contain many young, hot stars and active star-forming regions</label>
+<label class="option"><input type="radio" name="q3" value="C"> C. They reflect sunlight</label>
+<label class="option"><input type="radio" name="q3" value="D"> D. They are made entirely of ice</label>
+</div>
+
+<div class="question-box">
+<h3>4. What generally distinguishes elliptical galaxies from spiral galaxies?</h3>
+<label class="option"><input type="radio" name="q4" value="A"> A. Elliptical galaxies usually have less cold gas and dust</label>
+<label class="option"><input type="radio" name="q4" value="B"> B. Elliptical galaxies contain no stars</label>
+<label class="option"><input type="radio" name="q4" value="C"> C. Elliptical galaxies always have spiral arms</label>
+<label class="option"><input type="radio" name="q4" value="D"> D. Elliptical galaxies are smaller than every other galaxy</label>
+</div>
+
+<div class="question-box">
+<h3>5. What is an irregular galaxy?</h3>
+<label class="option"><input type="radio" name="q5" value="A"> A. A galaxy with no stars</label>
+<label class="option"><input type="radio" name="q5" value="B"> B. A galaxy that does not have a clear regular spiral or elliptical shape</label>
+<label class="option"><input type="radio" name="q5" value="C"> C. A galaxy made only of planets</label>
+<label class="option"><input type="radio" name="q5" value="D"> D. A galaxy outside the observable universe</label>
+</div>
+
+<div class="question-box">
+<h3>6. What type of galaxy is the Milky Way?</h3>
+<label class="option"><input type="radio" name="q6" value="A"> A. Spiral galaxy</label>
+<label class="option"><input type="radio" name="q6" value="B"> B. Elliptical galaxy</label>
+<label class="option"><input type="radio" name="q6" value="C"> C. Irregular galaxy</label>
+<label class="option"><input type="radio" name="q6" value="D"> D. Ringless galaxy</label>
+</div>
+
+<div class="question-box">
+<h3>7. Where is our Solar System located?</h3>
+<label class="option"><input type="radio" name="q7" value="A"> A. At the exact center of the Milky Way</label>
+<label class="option"><input type="radio" name="q7" value="B"> B. In the Milky Way's galactic disk</label>
+<label class="option"><input type="radio" name="q7" value="C"> C. Outside the Milky Way</label>
+<label class="option"><input type="radio" name="q7" value="D"> D. Inside Sagittarius A*</label>
+</div>
+
+<div class="question-box">
+<h3>8. What is Sagittarius A*?</h3>
+<label class="option"><input type="radio" name="q8" value="A"> A. A galaxy cluster</label>
+<label class="option"><input type="radio" name="q8" value="B"> B. The supermassive black hole at the center of the Milky Way</label>
+<label class="option"><input type="radio" name="q8" value="C"> C. A planet near Earth</label>
+<label class="option"><input type="radio" name="q8" value="D"> D. A type of galaxy</label>
+</div>
+
+<div class="question-box">
+<h3>9. Why is the Milky Way difficult to map from Earth?</h3>
+<label class="option"><input type="radio" name="q9" value="A"> A. We are located inside it</label>
+<label class="option"><input type="radio" name="q9" value="B"> B. It contains no stars</label>
+<label class="option"><input type="radio" name="q9" value="C"> C. It is invisible at every wavelength</label>
+<label class="option"><input type="radio" name="q9" value="D"> D. It has no gravitational field</label>
+</div>
+
+<div class="question-box">
+<h3>10. What is a supermassive black hole?</h3>
+<label class="option"><input type="radio" name="q10" value="A"> A. A black hole with a mass of roughly millions to billions of Suns</label>
+<label class="option"><input type="radio" name="q10" value="B"> B. A small asteroid</label>
+<label class="option"><input type="radio" name="q10" value="C"> C. A neutron star</label>
+<label class="option"><input type="radio" name="q10" value="D"> D. A cloud of dust</label>
+</div>
+
+<div class="question-box">
+<h3>11. What is an accretion disk?</h3>
+<label class="option"><input type="radio" name="q11" value="A"> A. A collection of planets orbiting a star</label>
+<label class="option"><input type="radio" name="q11" value="B"> B. A rotating disk of matter falling toward a massive object</label>
+<label class="option"><input type="radio" name="q11" value="C"> C. A galaxy without stars</label>
+<label class="option"><input type="radio" name="q11" value="D"> D. A type of galaxy cluster</label>
+</div>
+
+<div class="question-box">
+<h3>12. What is a quasar?</h3>
+<label class="option"><input type="radio" name="q12" value="A"> A. An extremely luminous active galactic nucleus</label>
+<label class="option"><input type="radio" name="q12" value="B"> B. A small moon</label>
+<label class="option"><input type="radio" name="q12" value="C"> C. A type of asteroid</label>
+<label class="option"><input type="radio" name="q12" value="D"> D. A region containing no matter</label>
+</div>
+
+<div class="question-box">
+<h3>13. How can galaxies grow over cosmic time?</h3>
+<label class="option"><input type="radio" name="q13" value="A"> A. Only by losing stars</label>
+<label class="option"><input type="radio" name="q13" value="B"> B. Through processes including gas accretion and galaxy mergers</label>
+<label class="option"><input type="radio" name="q13" value="C"> C. Only by moving closer to the Sun</label>
+<label class="option"><input type="radio" name="q13" value="D"> D. By becoming planets</label>
+</div>
+
+<div class="question-box">
+<h3>14. What role does dark matter play in galaxy formation?</h3>
+<label class="option"><input type="radio" name="q14" value="A"> A. It provides gravitational structure that helps galaxies form and grow</label>
+<label class="option"><input type="radio" name="q14" value="B"> B. It produces visible sunlight</label>
+<label class="option"><input type="radio" name="q14" value="C"> C. It prevents gravity from acting</label>
+<label class="option"><input type="radio" name="q14" value="D"> D. It destroys every galaxy</label>
+</div>
+
+<div class="question-box">
+<h3>15. What is a galaxy cluster?</h3>
+<label class="option"><input type="radio" name="q15" value="A"> A. A single star with many planets</label>
+<label class="option"><input type="radio" name="q15" value="B"> B. A large gravitationally bound collection of galaxies</label>
+<label class="option"><input type="radio" name="q15" value="C"> C. A cloud containing only dust</label>
+<label class="option"><input type="radio" name="q15" value="D"> D. A type of black hole</label>
+</div>
+
+<div class="question-box">
+<h3>16. What is the Local Group?</h3>
+<label class="option"><input type="radio" name="q16" value="A"> A. The group of galaxies that includes the Milky Way and Andromeda</label>
+<label class="option"><input type="radio" name="q16" value="B"> B. A group of planets around the Sun</label>
+<label class="option"><input type="radio" name="q16" value="C"> C. A group of stars inside one planet</label>
+<label class="option"><input type="radio" name="q16" value="D"> D. A group of black holes only</label>
+</div>
+
+<div class="question-box">
+<h3>17. What is the cosmic web?</h3>
+<label class="option"><input type="radio" name="q17" value="A"> A. A network of galaxies and matter arranged in large-scale filaments and structures</label>
+<label class="option"><input type="radio" name="q17" value="B"> B. A web surrounding Earth</label>
+<label class="option"><input type="radio" name="q17" value="C"> C. A single galaxy</label>
+<label class="option"><input type="radio" name="q17" value="D"> D. A type of telescope</label>
+</div>
+
+<div class="question-box">
+<h3>18. What are cosmic voids?</h3>
+<label class="option"><input type="radio" name="q18" value="A"> A. Regions of the large-scale universe with relatively few galaxies</label>
+<label class="option"><input type="radio" name="q18" value="B"> A. Regions containing only stars</label>
+<label class="option"><input type="radio" name="q18" value="C"> A. The centers of black holes</label>
+<label class="option"><input type="radio" name="q18" value="D"> A. The cores of planets</label>
+</div>
+
+<div class="question-box">
+<h3>19. How do astronomers measure the large-scale distribution of galaxies?</h3>
+<label class="option"><input type="radio" name="q19" value="A"> A. By mapping galaxy positions and measuring properties such as redshift</label>
+<label class="option"><input type="radio" name="q19" value="B"> B. By touching the galaxies</label>
+<label class="option"><input type="radio" name="q19" value="C"> C. By measuring only Earth's temperature</label>
+<label class="option"><input type="radio" name="q19" value="D"> D. By observing only the Moon</label>
+</div>
+
+<div class="question-box">
+<h3>20. Why is studying galaxies important?</h3>
+<label class="option"><input type="radio" name="q20" value="A"> A. It helps us understand how stars, galaxies, black holes, and large-scale cosmic structures form and evolve</label>
+<label class="option"><input type="radio" name="q20" value="B"> B. It proves that galaxies never change</label>
+<label class="option"><input type="radio" name="q20" value="C"> C. It shows that gravity does not affect galaxies</label>
+<label class="option"><input type="radio" name="q20" value="D"> D. It proves that the Milky Way is the entire universe</label>
+</div>
+
+<div class="submit-area">
+<button type="submit" class="exam-btn">Submit Final Exam</button>
+</div>
+
+</form>
+
+<div class="result" id="result"></div>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 AstroLearn. Explore. Learn. Discover.</p>
+</footer>
+
+<script>
+
+const correctAnswers = [
+    "B","A","B","A","B",
+    "A","B","B","A","A",
+    "B","A","B","A","B",
+    "A","A","A","A","A"
+];
+
+document.getElementById("examForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let score = 0;
+
+    for(let i = 1; i <= 20; i++){
+
+        const selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if(selected && selected.value === correctAnswers[i - 1]){
+            score++;
+        }
+    }
+
+    const percentage = (score / 20) * 100;
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    if(score >= 14){
+
+        localStorage.setItem("course4ExamPassed","true");
+        localStorage.setItem("course4ExamScore",score);
+        localStorage.setItem("course4Name","Galaxies");
+        localStorage.setItem("course4MissionName","Mission 4");
+
+        let certificateID = localStorage.getItem("course4CertificateID");
+
+        if(!certificateID){
+            certificateID = "ASTRO-M4-" + Date.now().toString().slice(-8);
+            localStorage.setItem("course4CertificateID",certificateID);
+        }
+
+        result.innerHTML = `
+            <h2>🎉 Congratulations!</h2>
+            <p>You passed the Course 4 Final Exam.</p>
+            <p><strong>Score: ${score}/20 (${percentage}%)</strong></p>
+            <p>Redirecting you to your congratulations page...</p>
+        `;
+
+        setTimeout(function(){
+            window.location.href = "congratulations.html";
+        },1500);
+
+    }else{
+
+        result.innerHTML = `
+            <h2>📚 Keep Learning!</h2>
+            <p>You did not reach the passing score yet.</p>
+            <p><strong>Score: ${score}/20 (${percentage}%)</strong></p>
+            <p>You need at least 14 correct answers (70%) to pass.</p>
+            <button class="retry-btn" onclick="location.reload()">Try Again</button>
+        `;
+    }
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>

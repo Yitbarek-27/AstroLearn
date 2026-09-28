@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn Final Exam</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+<li><a href="courses.html">Learn</a></li>
+<li><a href="explore.html">Explore</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<section class="lesson-page">
+
+
+<h1>🏆 AstroLearn Final Exam</h1>
+
+
+<p class="lesson-intro">
+
+Test your knowledge from the Introduction to Astronomy course.
+Answer all questions to earn your AstroLearn certificate.
+
+</p>
+
+
+
+<div class="info-box">
+
+<h3>📌 Exam Rules</h3>
+
+<ul>
+
+<li>15 multiple-choice questions</li>
+
+<li>Passing score: 11/15</li>
+
+<li>Answers will not be revealed after submission</li>
+
+<li>You may retake the exam if needed</li>
+
+</ul>
+
+</div>
+
+
+
+
+<div id="exam-container"></div>
+
+
+
+<button class="complete-btn" onclick="submitExam()">
+
+Submit Exam
+
+</button>
+
+
+
+<div id="result" class="summary-box"></div>
+
+
+
+</section>
+
+
+
+
+<footer class="footer">
+
+<h3>🌌 AstroLearn</h3>
+
+<p>Your Journey Through Space Begins Here.</p>
+
+</footer>
+
+
+
+
+
+<script>
+
+if(!localStorage.getItem("studentName")){
+
+let name=prompt("Enter your full name for your certificate:");
+
+if(name){
+
+localStorage.setItem("studentName",name);
+
+}
+
+}
+
+const questions = [
+
+
+{
+q:"What is astronomy?",
+answers:[
+"Study of weather",
+"Scientific study of objects beyond Earth",
+"Study of oceans",
+"Study of Earth's rocks"
+],
+correct:"Scientific study of objects beyond Earth"
+},
+
+
+
+{
+q:"Which planet is known as the Red Planet?",
+answers:[
+"Venus",
+"Mars",
+"Jupiter",
+"Mercury"
+],
+correct:"Mars"
+},
+
+
+
+{
+q:"Who used the telescope to make important astronomical observations?",
+answers:[
+"Isaac Newton",
+"Galileo Galilei",
+"Edwin Hubble",
+"Kepler"
+],
+correct:"Galileo Galilei"
+},
+
+
+
+{
+q:"What model suggested that Earth revolves around the Sun?",
+answers:[
+"Geocentric model",
+"Solar system model",
+"Heliocentric model",
+"Galaxy model"
+],
+correct:"Heliocentric model"
+},
+
+
+
+{
+q:"What does cosmology study?",
+answers:[
+"The origin and evolution of the universe",
+"Weather patterns",
+"Animal life",
+"Ocean systems"
+],
+correct:"The origin and evolution of the universe"
+},
+
+
+
+{
+q:"Why is light important in astronomy?",
+answers:[
+"It creates planets",
+"It carries information from distant objects",
+"It stops gravity",
+"It replaces telescopes"
+],
+correct:"It carries information from distant objects"
+},
+
+
+
+{
+q:"What is an astronomical unit mainly used to measure?",
+answers:[
+"Distances inside the Solar System",
+"The age of galaxies",
+"The temperature of stars",
+"The mass of planets"
+],
+correct:"Distances inside the Solar System"
+},
+
+
+
+{
+q:"What is a light-year a measurement of?",
+answers:[
+"Time",
+"Brightness",
+"Distance",
+"Temperature"
+],
+correct:"Distance"
+},
+
+
+
+{
+q:"What is the main purpose of a telescope?",
+answers:[
+"Collect information from distant objects",
+"Create stars",
+"Move planets",
+"Change gravity"
+],
+correct:"Collect information from distant objects"
+},
+
+
+
+{
+q:"Which telescope uses mirrors to collect light?",
+answers:[
+"Radio telescope",
+"Reflecting telescope",
+"Refracting telescope",
+"Infrared telescope"
+],
+correct:"Reflecting telescope"
+},
+
+
+
+{
+q:"Who discovered that planets move in elliptical orbits?",
+answers:[
+"Kepler",
+"Newton",
+"Hubble",
+"Copernicus"
+],
+correct:"Kepler"
+},
+
+
+
+{
+q:"What did Isaac Newton explain?",
+answers:[
+"Galaxy formation only",
+"Universal gravity",
+"Planet colors",
+"Star names"
+],
+correct:"Universal gravity"
+},
+
+
+
+{
+q:"Who discovered that the universe is expanding?",
+answers:[
+"Galileo",
+"Copernicus",
+"Edwin Hubble",
+"Aristotle"
+],
+correct:"Edwin Hubble"
+},
+
+
+
+{
+q:"Why are space telescopes useful?",
+answers:[
+"They avoid limitations caused by Earth's atmosphere",
+"They create new galaxies",
+"They stop light",
+"They change planets"
+],
+correct:"They avoid limitations caused by Earth's atmosphere"
+},
+
+
+
+{
+q:"What is the goal of astronomy?",
+answers:[
+"Understand the universe through science",
+"Predict daily weather only",
+"Study only Earth",
+"Create fictional worlds"
+],
+correct:"Understand the universe through science"
+}
+
+
+
+];
+
+
+
+// Shuffle function
+
+function shuffle(array){
+
+return array.sort(()=>Math.random()-0.5);
+
+}
+
+
+
+let examQuestions = shuffle([...questions]);
+
+
+
+const container=document.getElementById("exam-container");
+
+
+
+examQuestions.forEach((item,index)=>{
+
+
+let answers=shuffle([...item.answers]);
+
+
+let box=document.createElement("div");
+
+
+box.className="lesson-section";
+
+
+box.innerHTML=`
+
+<h2>${index+1}. ${item.q}</h2>
+
+
+${answers.map(answer=>`
+
+<label style="display:block;margin:15px 0">
+
+<input type="radio" 
+name="q${index}" 
+value="${answer}">
+
+${answer}
+
+</label>
+
+`).join("")}
+
+
+`;
+
+
+container.appendChild(box);
+
+
+});
+
+
+
+
+
+
+function submitExam(){
+
+
+let score=0;
+
+
+examQuestions.forEach((item,index)=>{
+
+
+let selected=document.querySelector(
+`input[name="q${index}"]:checked`
+);
+
+
+if(selected && selected.value===item.correct){
+
+score++;
+
+}
+
+
+});
+
+
+
+let result=document.getElementById("result");
+
+
+
+if(score>=11){
+
+
+localStorage.setItem("certificateUnlocked","true");
+localStorage.setItem("examScore",score);
+localStorage.setItem("examPassed","true");
+
+
+// Save certificate information
+localStorage.setItem(
+    "courseName",
+    "Introduction to Astronomy"
+);
+
+localStorage.setItem(
+    "completionDate",
+    new Date().toLocaleDateString()
+);
+
+// Generate a unique certificate ID once
+if(!localStorage.getItem("certificateID")){
+
+    const id =
+    "AL-2026-" +
+    Math.floor(100000 + Math.random() * 900000);
+
+    localStorage.setItem(
+        "certificateID",
+        id
+    );
+
+}
+
+result.innerHTML=`
+
+<h2>🎉 Congratulations!</h2>
+
+<p>Your Score: ${score}/15</p>
+
+<p>
+You passed the AstroLearn Final Exam.
+</p>
+
+<a class="course-btn" href="congratulations.html">
+🎉 Continue
+</a>
+
+`;
+
+
+
+}
+
+else{
+
+
+result.innerHTML=`
+
+<h2>📚 Exam Not Passed</h2>
+
+<p>Your Score: ${score}/15</p>
+
+<p>
+You need at least 11/15.
+Review the lessons and try again.
+</p>
+
+
+<button class="complete-btn"
+onclick="location.reload()">
+
+🔄 Retake Exam
+
+</button>
+
+`;
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

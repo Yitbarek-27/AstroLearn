@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Congratulations | AstroLearn</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li><a href="courses.html">Learn</a></li>
+<li><a href="explore.html">Explore</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+
+<section class="congrats-page">
+
+<div class="congrats-card">
+
+<h1>🎉 Congratulations!</h1>
+
+<p class="subtitle">
+
+You have successfully completed
+
+</p>
+
+<h2 id="missionName">Mission 1</h2>
+
+<h3 id="courseName">📚 Introduction to Astronomy</h3>
+
+<p class="message">
+
+Excellent work! You completed every lesson,
+passed the final examination,
+and earned your first AstroLearn Certificate.
+
+</p>
+
+<div class="score-box">
+
+<div>
+
+<h4>🏆 Final Score</h4>
+
+<p id="score">15 / 15</p>
+
+</div>
+
+<div>
+
+<h4>📜 Certificate</h4>
+
+<p>Unlocked</p>
+
+</div>
+
+</div>
+
+<div class="congrats-buttons">
+
+<a href="certificate.html" class="course-btn">
+
+🏅 View Certificate
+
+</a>
+
+<a href="courses.html" class="course-btn secondary">
+
+🚀 Continue Learning
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h3>🌌 AstroLearn</h3>
+
+<p>Your Journey Through Space Begins Here.</p>
+
+<p class="message">
+Certificate ID:
+<strong id="certificateID"></strong>
+</p>
+
+</footer>
+
+<script>
+
+document.getElementById("score").textContent =
+(localStorage.getItem("examScore") || "0") + " / 15";
+
+document.getElementById("courseName").textContent =
+"📚 " + (localStorage.getItem("courseName") || "Introduction to Astronomy");
+
+document.getElementById("missionName").textContent =
+localStorage.getItem("missionName") || "Mission 1";
+
+document.getElementById("certificateID").textContent =
+localStorage.getItem("certificateID") || "Generating...";
+
+// Save certificate information
+
+if(!localStorage.getItem("studentName")){
+    localStorage.setItem("studentName","Yitbarek Abebe Amare");
+}
+
+localStorage.setItem(
+    "examScore",
+    localStorage.getItem("examScore") || "15"
+);
+
+if(!localStorage.getItem("certificateID")){
+    const id =
+    "AL-2026-" +
+    Math.floor(100000 + Math.random() * 900000);
+
+    localStorage.setItem("certificateID", id);
+}
+
+localStorage.setItem(
+    "courseName",
+    "Introduction to Astronomy"
+);
+</script>
+
+</body>
+
+</html>

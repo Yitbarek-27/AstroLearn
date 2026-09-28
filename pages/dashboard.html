@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AstroLearn | Student Dashboard</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <h2 class="logo">🌌 AstroLearn</h2>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="courses.html">Learn</a>
+            </li>
+
+            <li>
+                <a href="explore.html">Explore</a>
+            </li>
+
+            <li>
+                <a href="quiz.html">Quiz</a>
+            </li>
+
+            <li>
+                <a href="about.html" class="active">About</a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<main class="dashboard-page">
+
+<section class="page-header">
+
+    <h1>🚀 Student Dashboard</h1>
+
+    <p>
+        Track your journey through the universe.
+    </p>
+
+</section>
+
+
+<section class="missions">
+
+
+<!-- =========================
+     STUDENT PROFILE
+========================= -->
+
+<div class="mission-card dashboard-profile">
+
+    <h2>
+        👤 Welcome,
+        <span id="studentName">Astronomer</span>!
+    </h2>
+
+    <p>
+        Keep learning, complete your missions,
+        and explore the universe.
+    </p>
+
+</div>
+
+
+<!-- =========================
+     STATISTICS
+========================= -->
+
+<div class="dashboard-grid">
+
+
+    <div class="mission-card dashboard-stat">
+
+        <h2>📚</h2>
+
+        <h3 id="completedCourses">0</h3>
+
+        <p>
+            Courses Completed
+        </p>
+
+    </div>
+
+
+    <div class="mission-card dashboard-stat">
+
+        <h2>📖</h2>
+
+        <h3 id="completedLessons">0</h3>
+
+        <p>
+            Lessons Completed
+        </p>
+
+    </div>
+
+
+    <div class="mission-card dashboard-stat">
+
+        <h2>🏆</h2>
+
+        <h3 id="certificates">0</h3>
+
+        <p>
+            Certificates Earned
+        </p>
+
+    </div>
+
+
+    <div class="mission-card dashboard-stat">
+
+        <h2>🧠</h2>
+
+        <h3 id="quizScore">--</h3>
+
+        <p>
+            Latest Quiz Score
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     COURSE PROGRESS
+========================= -->
+
+<div class="mission-card">
+
+    <h2>🌌 Course Progress</h2>
+
+    <p>
+        Track your progress through the AstroLearn missions.
+    </p>
+
+    <br>
+
+
+    <!-- COURSE 1 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 1: Introduction to Astronomy
+            </strong>
+
+            <span id="course1Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course1Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course1Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+
+    <!-- COURSE 2 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 2: Solar System Explorer
+            </strong>
+
+            <span id="course2Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course2Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course2Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+
+    <!-- COURSE 3 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 3: Life Cycle of Stars
+            </strong>
+
+            <span id="course3Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course3Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course3Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+
+    <!-- COURSE 4 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 4: Galaxies
+            </strong>
+
+            <span id="course4Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course4Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course4Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+
+    <!-- COURSE 5 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 5: Black Holes
+            </strong>
+
+            <span id="course5Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course5Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course5Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+
+    <!-- COURSE 6 -->
+
+    <div class="dashboard-course">
+
+        <div class="dashboard-course-header">
+
+            <strong>
+                Mission 6: Cosmology
+            </strong>
+
+            <span id="course6Percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="course6Bar"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+        <p id="course6Text">
+            0 / 8 lessons completed
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CERTIFICATES
+========================= -->
+
+<div class="mission-card">
+
+    <h2>🏆 My Certificates</h2>
+
+    <div id="certificateList">
+
+        <p>
+            No certificates earned yet.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     QUICK ACTIONS
+========================= -->
+
+<div class="mission-card">
+
+    <h2>🚀 Continue Learning</h2>
+
+    <p>
+        Choose what you want to explore next.
+    </p>
+
+    <br>
+
+    <a href="courses.html" class="course-btn">
+
+        📚 Explore Courses
+
+    </a>
+
+
+    <a href="quiz.html" class="course-btn">
+
+        🧠 Take Quiz
+
+    </a>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <h3>🌌 AstroLearn</h3>
+
+    <p>
+        Your Journey Through Space Begins Here.
+    </p>
+
+    <p>
+        © 2026 AstroLearn. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   STUDENT NAME
+===================================================== */
+
+const studentName =
+    localStorage.getItem("studentName") || "Astronomer";
+
+document.getElementById("studentName").textContent =
+    studentName;
+
+
+/* =====================================================
+   COURSE PROGRESS
+===================================================== */
+
+const totalLessons = 8;
+
+let totalCompletedLessons = 0;
+
+let completedCourses = 0;
+
+let certificates = 0;
+
+
+function getCourseProgress(courseNumber){
+
+    let completed = 0;
+
+    for(let i = 1; i <= totalLessons; i++){
+
+        const lessonKey =
+            `course${courseNumber}Lesson${i}`;
+
+        if(
+            localStorage.getItem(lessonKey)
+            === "completed"
+        ){
+
+            completed++;
+
+        }
+
+    }
+
+    return completed;
+
+}
+
+
+for(let course = 1; course <= 6; course++){
+
+    const completed =
+        getCourseProgress(course);
+
+
+    const percentage =
+        Math.round(
+            (completed / totalLessons) * 100
+        );
+
+
+    totalCompletedLessons += completed;
+
+
+    if(completed === totalLessons){
+
+        completedCourses++;
+
+    }
+
+
+    document.getElementById(
+        `course${course}Percent`
+    ).textContent =
+        percentage + "%";
+
+
+    document.getElementById(
+        `course${course}Bar`
+    ).style.width =
+        percentage + "%";
+
+
+    document.getElementById(
+        `course${course}Text`
+    ).textContent =
+        `${completed} / ${totalLessons} lessons completed`;
+
+}
+
+
+/* =====================================================
+   COURSE STATISTICS
+===================================================== */
+
+document.getElementById(
+    "completedLessons"
+).textContent =
+    totalCompletedLessons;
+
+
+document.getElementById(
+    "completedCourses"
+).textContent =
+    completedCourses;
+
+
+/* =====================================================
+   CERTIFICATES
+===================================================== */
+
+const certificateCourses = [
+
+    {
+        number: 1,
+        name: "Introduction to Astronomy",
+        key: "course1ExamPassed",
+        link: "course1/certificate.html"
+    },
+
+    {
+        number: 2,
+        name: "Solar System Explorer",
+        key: "course2ExamPassed",
+        link: "course2/certificate.html"
+    },
+
+    {
+        number: 3,
+        name: "Life Cycle of Stars",
+        key: "course3ExamPassed",
+        link: "course3/certificate.html"
+    },
+
+    {
+        number: 4,
+        name: "Galaxies",
+        key: "course4ExamPassed",
+        link: "course4/certificate.html"
+    },
+
+    {
+        number: 5,
+        name: "Black Holes",
+        key: "course5ExamPassed",
+        link: "course5/certificate.html"
+    },
+
+    {
+        number: 6,
+        name: "Cosmology",
+        key: "course6ExamPassed",
+        link: "course6/certificate.html"
+    }
+
+];
+
+
+const certificateList =
+    document.getElementById("certificateList");
+
+
+let certificateHTML = "";
+
+
+certificateCourses.forEach(course => {
+
+    if(
+        localStorage.getItem(course.key)
+        === "true"
+    ){
+
+        certificates++;
+
+
+        certificateHTML += `
+
+            <div class="certificate-item">
+
+                <h3>
+                    🏆 ${course.name}
+                </h3>
+
+                <p>
+                    Mission ${course.number} completed
+                </p>
+
+                <a
+                    href="${course.link}"
+                    class="course-btn">
+
+                    📜 View Certificate
+
+                </a>
+
+            </div>
+
+        `;
+
+    }
+
+});
+
+
+if(certificates > 0){
+
+    certificateList.innerHTML =
+        certificateHTML;
+
+}
+else{
+
+    certificateList.innerHTML = `
+
+        <p>
+            Complete a course and pass its final
+            examination to earn your first certificate.
+        </p>
+
+    `;
+
+}
+
+
+document.getElementById(
+    "certificates"
+).textContent =
+    certificates;
+
+
+/* =====================================================
+   QUIZ SCORE
+===================================================== */
+
+const quizScore =
+    localStorage.getItem("quizScore");
+
+
+const quizTotal =
+    localStorage.getItem("quizTotal");
+
+
+if(
+    quizScore !== null &&
+    quizTotal !== null
+){
+
+    const percentage =
+        Math.round(
+            (
+                Number(quizScore) /
+                Number(quizTotal)
+            ) * 100
+        );
+
+
+    document.getElementById(
+        "quizScore"
+    ).textContent =
+        `${percentage}%`;
+
+}
+
+</script>
+
+</body>
+
+</html>

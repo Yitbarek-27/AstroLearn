@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn | Introduction to Astronomy</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.course-container{
+    max-width:1200px;
+    margin:130px auto;
+    padding:40px;
+}
+
+
+.course-hero{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+
+    background:#111c2f;
+
+    padding:50px;
+
+    border-radius:25px;
+
+}
+
+
+.course-content{
+    flex:1;
+}
+
+
+.course-content h1{
+
+    font-size:3.2rem;
+    color:#fbbf24;
+    margin-bottom:20px;
+
+}
+
+
+.course-content p{
+
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:18px;
+
+}
+
+
+.course-image{
+
+    flex:1;
+    text-align:center;
+
+}
+
+
+.course-image img{
+
+    width:100%;
+    max-width:500px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+}
+
+
+.course-badges{
+    margin-top:25px;
+}
+
+
+.course-badge{
+
+    display:inline-block;
+
+    background:#2563eb;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    margin:5px;
+
+    font-size:14px;
+
+}
+
+
+.course-section{
+
+    margin-top:50px;
+
+    background:#111c2f;
+
+    padding:40px;
+
+    border-radius:25px;
+
+}
+
+
+.course-section h2{
+
+    color:#60a5fa;
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+
+}
+
+
+.course-section p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+.learning-list li{
+
+    margin:15px 0;
+
+    color:#d1d5db;
+
+}
+
+
+.progress-container{
+
+    width:100%;
+
+    height:10px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#2563eb;
+
+    transition:width .5s ease;
+
+}
+
+
+.lesson-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#162338;
+
+    padding:25px;
+
+    margin:20px 0;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+
+.lesson-card:hover{
+
+    transform:translateX(8px);
+
+    background:#1e3a5f;
+
+}
+
+
+.lesson-card h3{
+
+    margin-bottom:8px;
+
+}
+
+
+.lesson-card p{
+
+    color:#cbd5e1;
+
+}
+
+
+.lesson-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    white-space:nowrap;
+
+}
+
+
+.lesson-completed{
+
+    background:#14532d;
+
+}
+
+
+.lesson-completed .lesson-btn{
+
+    background:#16a34a;
+
+}
+
+
+.exam-box{
+
+    text-align:center;
+
+}
+
+
+.exam-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:15px 35px;
+
+    border-radius:30px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+.exam-locked{
+
+    background:#475569;
+
+    cursor:not-allowed;
+
+}
+
+
+@media(max-width:900px){
+
+.course-hero{
+
+    flex-direction:column;
+
+}
+
+
+.course-content h1{
+
+    font-size:2.5rem;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="courses.html">Learn</a></li>
+
+<li><a href="explore.html">Explore</a></li>
+
+<li><a href="quiz.html">Quiz</a></li>
+
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<div class="course-container">
+
+
+<!-- COURSE HERO -->
+
+<section class="course-hero">
+
+
+<div class="course-content">
+
+<h1>
+🚀 Introduction to Astronomy
+</h1>
+
+
+<p>
+
+Begin your journey into astronomy and discover
+how humans study the universe. Explore stars,
+planets, galaxies, light, telescopes, space
+measurement, and the discoveries that changed
+our understanding of the cosmos.
+
+</p>
+
+
+<div class="course-badges">
+
+<span class="course-badge">
+🌱 Beginner
+</span>
+
+<span class="course-badge">
+📚 8 Lessons
+</span>
+
+<span class="course-badge">
+🏆 Certificate
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="course-image">
+
+<img 
+    src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002070/GSFC_20171208_Archive_e002070~orig.jpg" 
+    alt="Webb's First Deep Field">
+</div>
+
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="course-section">
+
+<h2>
+📖 About This Course
+</h2>
+
+
+<p>
+
+Astronomy is the scientific study of everything
+beyond Earth. From nearby planets and stars to
+distant galaxies and the structure of the universe,
+astronomy helps us understand our place in the cosmos.
+
+</p>
+
+
+<p>
+
+In this introductory course, you will build a
+foundation in astronomy by learning how the field
+developed, how astronomers classify different
+branches of science, how light carries information
+across space, and how scientists observe objects
+that are billions of light-years away.
+
+</p>
+
+
+<p>
+
+You will also discover the history of important
+astronomical discoveries and learn how modern
+astronomers use telescopes and other instruments
+to investigate the universe.
+
+</p>
+
+</section>
+
+
+
+<!-- WHAT YOU WILL LEARN -->
+
+<section class="course-section">
+
+<h2>
+🎯 What You Will Learn
+</h2>
+
+
+<ul class="learning-list">
+
+<li>
+What astronomy is and how it differs from other sciences
+</li>
+
+<li>
+How ancient civilizations studied the sky
+</li>
+
+<li>
+The major branches of modern astronomy
+</li>
+
+<li>
+How light and the electromagnetic spectrum help astronomers study space
+</li>
+
+<li>
+How astronomers measure enormous cosmic distances
+</li>
+
+<li>
+How telescopes collect and analyze light
+</li>
+
+<li>
+The discoveries of famous astronomers throughout history
+</li>
+
+<li>
+How the major ideas of astronomy connect together
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<section class="course-section">
+
+<h2>
+📊 Course Progress
+</h2>
+
+
+<p id="progressText">
+0 / 8 Lessons Completed
+</p>
+
+
+<div class="progress-container">
+
+<div
+class="progress-fill"
+id="courseProgress">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LESSONS -->
+
+<section class="course-section">
+
+<h2>
+📚 Course Lessons
+</h2>
+
+
+
+<!-- LESSON 1 -->
+
+<div class="lesson-card" id="lesson1">
+
+<div>
+
+<h3>
+🌌 Lesson 1: What is Astronomy?
+</h3>
+
+<p>
+Discover what astronomy is, what astronomers study,
+and why understanding the universe matters.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson1.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 2 -->
+
+<div class="lesson-card" id="lesson2">
+
+<div>
+
+<h3>
+🔭 Lesson 2: History of Astronomy
+</h3>
+
+<p>
+Travel through the history of astronomy and discover
+how humans transformed observations of the sky into science.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson2.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 3 -->
+
+<div class="lesson-card" id="lesson3">
+
+<div>
+
+<h3>
+🌠 Lesson 3: Branches of Astronomy
+</h3>
+
+<p>
+Explore the different fields of astronomy, from planetary
+science and stellar astronomy to cosmology and astrophysics.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson3.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson-card" id="lesson4">
+
+<div>
+
+<h3>
+💡 Lesson 4: Light and the Electromagnetic Spectrum
+</h3>
+
+<p>
+Learn how astronomers use different wavelengths of light
+to discover what distant objects are made of.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson4.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson-card" id="lesson5">
+
+<div>
+
+<h3>
+📏 Lesson 5: Measuring Space — AU & Light Years
+</h3>
+
+<p>
+Discover how astronomers measure the enormous distances
+between planets, stars, and galaxies.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson5.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson-card" id="lesson6">
+
+<div>
+
+<h3>
+🔭 Lesson 6: Telescopes and Space Observation
+</h3>
+
+<p>
+Learn how telescopes collect light and how scientists
+use them to observe objects across the universe.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson6.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson-card" id="lesson7">
+
+<div>
+
+<h3>
+👨‍🚀 Lesson 7: Famous Astronomers & Discoveries
+</h3>
+
+<p>
+Meet the scientists whose observations and discoveries
+changed humanity's understanding of the universe.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson7.html">
+Start Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson-card" id="lesson8">
+
+<div>
+
+<h3>
+🧠 Lesson 8: Course Review
+</h3>
+
+<p>
+Review the major concepts from the course and prepare
+yourself for the final astronomy examination.
+</p>
+
+</div>
+
+<a class="lesson-btn" href="lesson8.html">
+Start Lesson
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section class="course-section">
+
+<h2>
+🧠 Skills You Will Gain
+</h2>
+
+
+<ul class="learning-list">
+
+<li>
+Understanding fundamental astronomy concepts
+</li>
+
+<li>
+Recognizing major fields of astronomical research
+</li>
+
+<li>
+Understanding how light carries information through space
+</li>
+
+<li>
+Using astronomical units to understand cosmic distances
+</li>
+
+<li>
+Understanding how telescopes observe the universe
+</li>
+
+<li>
+Connecting historical discoveries to modern astronomy
+</li>
+
+<li>
+Building a strong foundation for advanced astronomy studies
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- CERTIFICATE -->
+
+<section class="course-section">
+
+<h2>
+🏆 Certificate Requirements
+</h2>
+
+
+<p>
+
+To earn your AstroLearn certificate, students must
+complete all eight lessons and successfully complete
+the final examination.
+
+</p>
+
+
+<p>
+
+You may study the lessons in any order. Some students
+may already understand certain topics, while others may
+want to spend more time reviewing difficult concepts.
+
+</p>
+
+
+<p>
+
+The course is designed to give you the freedom to focus
+your learning where it is most useful to you.
+
+</p>
+
+</section>
+
+
+
+<!-- FINAL EXAM -->
+
+<section class="course-section exam-box">
+
+<h2>
+📝 Final Examination
+</h2>
+
+
+<p id="examDescription">
+
+Complete all 8 lessons to unlock the final examination.
+
+</p>
+
+
+<a
+id="examButton"
+class="exam-btn exam-locked">
+
+🔒 Final Exam Locked
+
+</a>
+
+</section>
+
+
+</div>
+
+
+
+<footer class="footer">
+
+<h3>🌌 AstroLearn</h3>
+
+<p>
+Your Journey Through Space Begins Here.
+</p>
+
+</footer>
+
+
+
+<script>
+
+// ==========================================
+// COURSE PROGRESS
+// ==========================================
+
+let completed = 0;
+
+
+// Check every lesson independently
+
+for(let i = 1; i <= 8; i++){
+
+    if(localStorage.getItem("lesson" + i + "Complete")){
+
+        completed++;
+
+    }
+
+}
+
+
+// ==========================================
+// UPDATE PROGRESS
+// ==========================================
+
+let percentage = (completed / 8) * 100;
+
+
+document.getElementById("courseProgress").style.width =
+    percentage + "%";
+
+
+document.getElementById("progressText").textContent =
+    completed + " / 8 Lessons Completed";
+
+
+// ==========================================
+// SHOW COMPLETED LESSONS
+// ==========================================
+
+for(let i = 1; i <= 8; i++){
+
+    if(localStorage.getItem("lesson" + i + "Complete")){
+
+        let lesson =
+            document.getElementById("lesson" + i);
+
+        lesson.classList.add("lesson-completed");
+
+        let button =
+            lesson.querySelector(".lesson-btn");
+
+        if(button){
+
+            button.textContent = "✅ Completed";
+
+        }
+
+    }
+
+}
+
+
+// ==========================================
+// FINAL EXAM
+// ==========================================
+
+if(completed === 8){
+
+    let examButton =
+        document.getElementById("examButton");
+
+    examButton.textContent =
+        "📝 Take Final Exam";
+
+    examButton.href =
+        "exam.html";
+
+    examButton.classList.remove("exam-locked");
+
+    document.getElementById("examDescription").textContent =
+        "🎉 You completed all 8 lessons! You are ready for the final examination.";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+

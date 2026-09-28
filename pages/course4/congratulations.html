@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations | AstroLearn</title>
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+.congrats-page{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 60px;
+}
+
+.congrats-box{
+    max-width:750px;
+    width:100%;
+    text-align:center;
+    padding:55px 35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.congrats-icon{
+    font-size:4.5rem;
+    margin-bottom:20px;
+}
+
+.congrats-box h1{
+    font-size:2.7rem;
+    margin-bottom:15px;
+}
+
+.congrats-box h2{
+    font-size:1.5rem;
+    margin:20px 0;
+}
+
+.congrats-box p{
+    color:#b8c7e6;
+    line-height:1.7;
+}
+
+.score-box{
+    margin:30px auto;
+    padding:20px;
+    max-width:400px;
+    border-radius:15px;
+    background:rgba(37,99,235,.12);
+    border:1px solid rgba(59,130,246,.25);
+}
+
+.score-box strong{
+    font-size:1.8rem;
+    color:white;
+}
+
+.certificate-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 35px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.certificate-btn:hover{
+    transform:translateY(-2px);
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:13px 30px;
+    border:2px solid rgba(255,255,255,.3);
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+}
+
+.certificate-id{
+    margin-top:20px;
+    font-size:.9rem;
+    color:#91a4c9;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../pages/courses.html">Learn</a></li>
+<li><a href="../../pages/explore.html">Explore</a></li>
+<li><a href="../../pages/quiz.html">Quiz</a></li>
+<li><a href="../../pages/about.html">About</a></li>
+</ul>
+</nav>
+</header>
+
+<main class="congrats-page">
+
+<div class="congrats-box">
+
+<div class="congrats-icon">🎉</div>
+
+<h1>Congratulations!</h1>
+
+<h2>🌌 You Completed Mission 4</h2>
+
+<p>
+You have successfully completed the <strong>Galaxies</strong> course
+and passed the final examination.
+</p>
+
+<div class="score-box">
+<p>Your Final Exam Score</p>
+<strong id="score">--/20</strong>
+<p id="percentage">--%</p>
+</div>
+
+<p>
+Your AstroLearn certificate is now ready.
+You can view and download your certificate below.
+</p>
+
+<a href="certificate.html" class="certificate-btn">
+🏆 View My Certificate
+</a>
+
+<br>
+
+<a href="../course4/course.html" class="back-btn">
+← Back to Course
+</a>
+
+<p class="certificate-id">
+Certificate ID: <span id="certificateID">---</span>
+</p>
+
+</div>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 AstroLearn. Explore. Learn. Discover.</p>
+</footer>
+
+<script>
+
+const passed = localStorage.getItem("course4ExamPassed");
+
+if(passed !== "true"){
+    window.location.href = "course.html";
+}
+
+const score = Number(localStorage.getItem("course4ExamScore") || 0);
+const percentage = Math.round((score / 20) * 100);
+
+document.getElementById("score").textContent = score + "/20";
+document.getElementById("percentage").textContent = percentage + "%";
+
+let certificateID = localStorage.getItem("course4CertificateID");
+
+if(!certificateID){
+    certificateID = "ASTRO-M4-" + Date.now().toString().slice(-8);
+    localStorage.setItem("course4CertificateID",certificateID);
+}
+
+document.getElementById("certificateID").textContent = certificateID;
+
+</script>
+
+</body>
+</html>

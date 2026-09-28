@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Exam | Life Cycle of Stars</title>
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+.exam-container{
+    max-width:1000px;
+    margin:120px auto 60px;
+    padding:0 25px;
+}
+
+.exam-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.exam-header h1{
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.exam-header p{
+    font-size:1.1rem;
+    opacity:.85;
+}
+
+.exam-info{
+    padding:22px;
+    border-radius:16px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+    margin-bottom:35px;
+}
+
+.question{
+    margin-bottom:25px;
+    padding:24px;
+    border-radius:16px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.question h3{
+    margin-bottom:18px;
+}
+
+.option{
+    display:block;
+    padding:12px 15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.2s;
+}
+
+.option:hover{
+    background:rgba(59,130,246,.15);
+}
+
+.option input{
+    margin-right:10px;
+}
+
+.submit-btn{
+    display:block;
+    margin:40px auto;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+#result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    margin-top:30px;
+    border-radius:18px;
+}
+
+.fail{
+    background:rgba(239,68,68,.12);
+    border:1px solid rgba(239,68,68,.3);
+}
+
+.result-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:13px 28px;
+    border-radius:25px;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">AstroLearn</div>
+
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/courses.html">Courses</a>
+        <a href="../../pages/explore.html">Explore</a>
+        <a href="../../pages/quiz.html">Quiz</a>
+        <a href="../../pages/about.html">About</a>
+        <a href="../../pages/login.html">Login</a>
+    </div>
+</nav>
+
+<div class="exam-container">
+
+<div class="exam-header">
+    <h1>🌟 Final Exam</h1>
+    <p>Life Cycle of Stars — Mission 3</p>
+</div>
+
+<div class="exam-info">
+    <strong>Exam Instructions</strong>
+    <ul>
+        <li>20 multiple-choice questions</li>
+        <li>1 point for each correct answer</li>
+        <li>Passing score: 14/20 (70%)</li>
+        <li>Select one answer for each question</li>
+    </ul>
+</div>
+
+<form id="examForm">
+
+<div class="question">
+<h3>1. What is a star primarily made of?</h3>
+<label class="option"><input type="radio" name="q1" value="A"> A. Rock and metal</label>
+<label class="option"><input type="radio" name="q1" value="B"> B. Hot gas and plasma</label>
+<label class="option"><input type="radio" name="q1" value="C"> C. Liquid water</label>
+<label class="option"><input type="radio" name="q1" value="D"> D. Solid ice</label>
+</div>
+
+<div class="question">
+<h3>2. What force causes a molecular cloud to collapse and begin forming a star?</h3>
+<label class="option"><input type="radio" name="q2" value="A"> A. Magnetism</label>
+<label class="option"><input type="radio" name="q2" value="B"> B. Radiation</label>
+<label class="option"><input type="radio" name="q2" value="C"> C. Gravity</label>
+<label class="option"><input type="radio" name="q2" value="D"> D. Friction</label>
+</div>
+
+<div class="question">
+<h3>3. What process provides most of a main-sequence star's energy?</h3>
+<label class="option"><input type="radio" name="q3" value="A"> A. Nuclear fusion</label>
+<label class="option"><input type="radio" name="q3" value="B"> B. Chemical burning</label>
+<label class="option"><input type="radio" name="q3" value="C"> C. Radioactive decay</label>
+<label class="option"><input type="radio" name="q3" value="D"> D. Friction</label>
+</div>
+
+<div class="question">
+<h3>4. What happens when a star runs out of hydrogen in its core?</h3>
+<label class="option"><input type="radio" name="q4" value="A"> A. It immediately disappears</label>
+<label class="option"><input type="radio" name="q4" value="B"> B. Its evolution changes and its outer layers can expand</label>
+<label class="option"><input type="radio" name="q4" value="C"> C. It becomes a planet</label>
+<label class="option"><input type="radio" name="q4" value="D"> D. It stops having gravity</label>
+</div>
+
+<div class="question">
+<h3>5. What is a red giant?</h3>
+<label class="option"><input type="radio" name="q5" value="A"> A. A young protostar</label>
+<label class="option"><input type="radio" name="q5" value="B"> B. An expanded late-stage star</label>
+<label class="option"><input type="radio" name="q5" value="C"> C. A neutron star</label>
+<label class="option"><input type="radio" name="q5" value="D"> D. A black hole</label>
+</div>
+
+<div class="question">
+<h3>6. Which stars can become supergiants?</h3>
+<label class="option"><input type="radio" name="q6" value="A"> A. Very massive stars</label>
+<label class="option"><input type="radio" name="q6" value="B"> B. Only planets</label>
+<label class="option"><input type="radio" name="q6" value="C"> C. Only white dwarfs</label>
+<label class="option"><input type="radio" name="q6" value="D"> D. Only asteroids</label>
+</div>
+
+<div class="question">
+<h3>7. What is a supernova?</h3>
+<label class="option"><input type="radio" name="q7" value="A"> A. A type of planet</label>
+<label class="option"><input type="radio" name="q7" value="B"> B. A powerful stellar explosion</label>
+<label class="option"><input type="radio" name="q7" value="C"> C. A normal star</label>
+<label class="option"><input type="radio" name="q7" value="D"> D. A galaxy</label>
+</div>
+
+<div class="question">
+<h3>8. Which can be left behind after the death of a massive star?</h3>
+<label class="option"><input type="radio" name="q8" value="A"> A. Neutron star or black hole</label>
+<label class="option"><input type="radio" name="q8" value="B"> A. Planet only</label>
+<label class="option"><input type="radio" name="q8" value="C"> A. Moon only</label>
+<label class="option"><input type="radio" name="q8" value="D"> A. Comet only</label>
+</div>
+
+<div class="question">
+<h3>9. What is a white dwarf?</h3>
+<label class="option"><input type="radio" name="q9" value="A"> A. A young star</label>
+<label class="option"><input type="radio" name="q9" value="B"> B. A compact stellar remnant</label>
+<label class="option"><input type="radio" name="q9" value="C"> C. A galaxy</label>
+<label class="option"><input type="radio" name="q9" value="D"> D. A nebula</label>
+</div>
+
+<div class="question">
+<h3>10. What mainly supports a white dwarf against gravitational collapse?</h3>
+<label class="option"><input type="radio" name="q10" value="A"> A. Electron degeneracy pressure</label>
+<label class="option"><input type="radio" name="q10" value="B"> B. Wind pressure</label>
+<label class="option"><input type="radio" name="q10" value="C"> C. Ocean pressure</label>
+<label class="option"><input type="radio" name="q10" value="D"> D. Sound waves</label>
+</div>
+
+<div class="question">
+<h3>11. What is a neutron star?</h3>
+<label class="option"><input type="radio" name="q11" value="A"> A. A very dense stellar remnant</label>
+<label class="option"><input type="radio" name="q11" value="B"> B. A normal planet</label>
+<label class="option"><input type="radio" name="q11" value="C"> C. A gas cloud</label>
+<label class="option"><input type="radio" name="q11" value="D"> D. A galaxy</label>
+</div>
+
+<div class="question">
+<h3>12. Why are neutron stars extremely dense?</h3>
+<label class="option"><input type="radio" name="q12" value="A"> A. They contain only ice</label>
+<label class="option"><input type="radio" name="q12" value="B"> B. A large amount of mass is compressed into a tiny volume</label>
+<label class="option"><input type="radio" name="q12" value="C"> C. They have no gravity</label>
+<label class="option"><input type="radio" name="q12" value="D"> D. They are made of empty space</label>
+</div>
+
+<div class="question">
+<h3>13. What is a pulsar?</h3>
+<label class="option"><input type="radio" name="q13" value="A"> A. A rotating neutron star producing periodic signals</label>
+<label class="option"><input type="radio" name="q13" value="B"> B. A type of galaxy</label>
+<label class="option"><input type="radio" name="q13" value="C"> C. A planet with rings</label>
+<label class="option"><input type="radio" name="q13" value="D"> D. A comet</label>
+</div>
+
+<div class="question">
+<h3>14. What is a magnetar?</h3>
+<label class="option"><input type="radio" name="q14" value="A"> A. A type of white dwarf</label>
+<label class="option"><input type="radio" name="q14" value="B"> B. A neutron star with an extremely strong magnetic field</label>
+<label class="option"><input type="radio" name="q14" value="C"> C. A planet</label>
+<label class="option"><input type="radio" name="q14" value="D"> D. A nebula</label>
+</div>
+
+<div class="question">
+<h3>15. What is a black hole?</h3>
+<label class="option"><input type="radio" name="q15" value="A"> A. A dark-colored planet</label>
+<label class="option"><input type="radio" name="q15" value="B"> B. A region of spacetime with extremely strong gravity</label>
+<label class="option"><input type="radio" name="q15" value="C"> C. A cold star</label>
+<label class="option"><input type="radio" name="q15" value="D"> D. A cloud of dust</label>
+</div>
+
+<div class="question">
+<h3>16. What is the event horizon?</h3>
+<label class="option"><input type="radio" name="q16" value="A"> A. The surface of a star</label>
+<label class="option"><input type="radio" name="q16" value="B"> B. The boundary beyond which escape is impossible</label>
+<label class="option"><input type="radio" name="q16" value="C"> C. A planet's atmosphere</label>
+<label class="option"><input type="radio" name="q16" value="D"> D. A type of radiation</label>
+</div>
+
+<div class="question">
+<h3>17. How can astronomers detect a black hole?</h3>
+<label class="option"><input type="radio" name="q17" value="A"> A. By observing its effects on nearby matter and stars</label>
+<label class="option"><input type="radio" name="q17" value="B"> B. By seeing its surface with normal light</label>
+<label class="option"><input type="radio" name="q17" value="C"> C. By listening to sound in space</label>
+<label class="option"><input type="radio" name="q17" value="D"> D. By observing its color</label>
+</div>
+
+<div class="question">
+<h3>18. What can be produced when two neutron stars merge?</h3>
+<label class="option"><input type="radio" name="q18" value="A"> A. Gravitational waves and heavy elements</label>
+<label class="option"><input type="radio" name="q18" value="B"> B. Only sunlight</label>
+<label class="option"><input type="radio" name="q18" value="C"> C. A normal planet immediately</label>
+<label class="option"><input type="radio" name="q18" value="D"> D. Nothing observable</label>
+</div>
+
+<div class="question">
+<h3>19. What mainly determines the final fate of a star?</h3>
+<label class="option"><input type="radio" name="q19" value="A"> A. Its initial mass</label>
+<label class="option"><input type="radio" name="q19" value="B"> B. Its color alone</label>
+<label class="option"><input type="radio" name="q19" value="C"> C. The number of planets around it</label>
+<label class="option"><input type="radio" name="q19" value="D"> D. Its distance from Earth</label>
+</div>
+
+<div class="question">
+<h3>20. Which sequence best describes the life cycle of a massive star?</h3>
+<label class="option"><input type="radio" name="q20" value="A"> A. Nebula → planet → asteroid → comet</label>
+<label class="option"><input type="radio" name="q20" value="B"> B. Nebula → massive star → supergiant → supernova → neutron star or black hole</label>
+<label class="option"><input type="radio" name="q20" value="C"> C. Planet → star → galaxy → nebula</label>
+<label class="option"><input type="radio" name="q20" value="D"> D. White dwarf → planet → supernova</label>
+</div>
+
+<button type="submit" class="submit-btn">Submit Final Exam</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+if(
+    localStorage.getItem("course3Lesson1") !== "true" ||
+    localStorage.getItem("course3Lesson2") !== "true" ||
+    localStorage.getItem("course3Lesson3") !== "true" ||
+    localStorage.getItem("course3Lesson4") !== "true" ||
+    localStorage.getItem("course3Lesson5") !== "true" ||
+    localStorage.getItem("course3Lesson6") !== "true" ||
+    localStorage.getItem("course3Lesson7") !== "true" ||
+    localStorage.getItem("course3Lesson8") !== "true"
+){
+    alert("Please complete all 8 lessons before taking the final exam.");
+    window.location.href = "course.html";
+}
+
+const correctAnswers = [
+    "B","C","A","B","B",
+    "A","B","A","B","A",
+    "A","B","A","B","B",
+    "B","A","A","A","B"
+];
+
+document.getElementById("examForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let score = 0;
+    let unanswered = 0;
+
+    for(let i = 1; i <= 20; i++){
+
+        const selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if(!selected){
+            unanswered++;
+        }else if(selected.value === correctAnswers[i - 1]){
+            score++;
+        }
+    }
+
+    if(unanswered > 0){
+        alert("Please answer all 20 questions before submitting.");
+        return;
+    }
+
+    const percentage = Math.round((score / 20) * 100);
+
+    if(score >= 14){
+
+        localStorage.setItem("course3ExamPassed","true");
+        localStorage.setItem("course3ExamScore",score);
+        localStorage.setItem("course3Name","Life Cycle of Stars");
+        localStorage.setItem("course3MissionName","Mission 3");
+
+        let certificateID =
+            localStorage.getItem("course3CertificateID");
+
+        if(!certificateID){
+            certificateID =
+                "ASTRO-M3-" +
+                Date.now().toString().slice(-8);
+
+            localStorage.setItem(
+                "course3CertificateID",
+                certificateID
+            );
+        }
+
+        window.location.href = "congratulations.html";
+
+    }else{
+
+        const result = document.getElementById("result");
+
+        result.style.display = "block";
+        result.className = "fail";
+
+        result.innerHTML = `
+            <h2>Keep Learning 🌌</h2>
+            <p>You scored <strong>${score}/20 (${percentage}%)</strong>.</p>
+            <p>You need at least <strong>14/20 (70%)</strong> to pass.</p>
+            <p>Review the lessons and try the exam again.</p>
+            <a href="course.html" class="result-btn">
+                Review Lessons
+            </a>
+        `;
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+
+});
+
+</script>
+
+</body>
+</html>

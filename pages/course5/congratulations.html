@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations | AstroLearn</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../pages/courses.html">Learn</a></li>
+<li><a href="../../pages/explore.html">Explore</a></li>
+<li><a href="../../pages/quiz.html">Quiz</a></li>
+<li><a href="../../pages/about.html">About</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="lesson-page">
+
+<div class="info-box" style="text-align:center;">
+
+<h1>🎉 Congratulations!</h1>
+
+<p class="lesson-intro">
+You have successfully completed the <strong>Black Holes</strong> course!
+</p>
+
+<div style="font-size:4rem; margin:25px 0;">
+🕳️ 🌌 🏆
+</div>
+
+<h2>🚀 Mission 5 Completed</h2>
+
+<p>
+You completed all 8 lessons and successfully passed the final exam.
+</p>
+
+<div class="lesson-meta">
+
+<div class="meta-card">
+<strong>📚 Course</strong>
+<span>Black Holes</span>
+</div>
+
+<div class="meta-card">
+<strong>📝 Exam Score</strong>
+<span id="score">--/20</span>
+</div>
+
+<div class="meta-card">
+<strong>🏆 Status</strong>
+<span>Passed</span>
+</div>
+
+</div>
+
+<p style="margin-top:30px;">
+Your AstroLearn certificate is now unlocked.
+</p>
+
+<a href="certificate.html" class="complete-btn">
+🏆 View My Certificate
+</a>
+
+<br><br>
+
+<a href="course.html" class="complete-btn">
+📚 Return to Course
+</a>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 AstroLearn | Explore. Learn. Discover.</p>
+</footer>
+
+<script>
+
+if(localStorage.getItem("course5ExamPassed") !== "true"){
+    window.location.href = "course.html";
+}
+
+const score =
+    localStorage.getItem("course5ExamScore") || "0";
+
+document.getElementById("score").textContent =
+    score + "/20 (" + ((Number(score) / 20) * 100) + "%)";
+
+let certificateID =
+    localStorage.getItem("course5CertificateID");
+
+if(!certificateID){
+
+    const year =
+        new Date().getFullYear().toString().slice(-2);
+
+    const random =
+        Math.floor(1000 + Math.random() * 9000);
+
+    certificateID = `ALA${year}-${random}`;
+
+    localStorage.setItem(
+        "course5CertificateID",
+        certificateID
+    );
+}
+
+localStorage.setItem("course5Name","Black Holes");
+localStorage.setItem("course5MissionName","Mission 5");
+
+</script>
+
+</body>
+</html>

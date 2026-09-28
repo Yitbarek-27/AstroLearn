@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galaxies | AstroLearn</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+
+.course-container{
+    max-width:1200px;
+    margin:130px auto;
+    padding:40px;
+}
+
+.course-hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    background:#111c2f;
+    padding:50px;
+    border-radius:25px;
+}
+
+.course-content{
+    flex:1;
+}
+
+.course-content h1{
+    font-size:3.2rem;
+    color:#fbbf24;
+    margin-bottom:20px;
+}
+
+.course-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.course-image{
+    flex:1;
+    text-align:center;
+}
+
+.course-image img{
+    width:100%;
+    max-width:500px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.course-badges{
+    margin-top:25px;
+}
+
+.course-badge{
+    display:inline-block;
+    background:#2563eb;
+    padding:8px 18px;
+    border-radius:30px;
+    margin:5px;
+    font-size:14px;
+}
+
+.course-section{
+    margin-top:50px;
+    background:#111c2f;
+    padding:40px;
+    border-radius:25px;
+}
+
+.course-section h2{
+    color:#60a5fa;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.course-section p{
+    color:#d1d5db;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.learning-list li{
+    margin:15px 0;
+    color:#d1d5db;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#2563eb;
+    transition:width .4s ease;
+}
+
+.lesson-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    background:#162338;
+    padding:25px;
+    margin:20px 0;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.lesson-card:hover{
+    transform:translateX(8px);
+    background:#1e3a5f;
+}
+
+.lesson-card h3{
+    margin-bottom:8px;
+}
+
+.lesson-card p{
+    color:#cbd5e1;
+}
+
+.lesson-btn{
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:30px;
+    white-space:nowrap;
+}
+
+.lesson-card.completed{
+    background:#14532d;
+}
+
+.lesson-card.completed .lesson-btn{
+    background:#16a34a;
+}
+
+.exam-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    background:#162338;
+    padding:30px;
+    margin-top:30px;
+    border-radius:20px;
+    border:1px solid #263a59;
+    transition:.3s;
+}
+
+.exam-card h3{
+    color:#fbbf24;
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.exam-card p{
+    color:#cbd5e1;
+}
+
+.exam-card.unlocked{
+    background:#12291f;
+    border:1px solid #22c55e;
+}
+
+.exam-card.unlocked h3{
+    color:#4ade80;
+}
+
+@media(max-width:900px){
+
+.course-hero{
+    flex-direction:column;
+}
+
+.course-content h1{
+    font-size:2.5rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.exam-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.lesson-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+
+<li>
+<a href="../../index.html">Home</a>
+</li>
+
+<li>
+<a href="../../pages/courses.html">Learn</a>
+</li>
+
+<li>
+<a href="../../pages/explore.html">Explore</a>
+</li>
+
+<li>
+<a href="../../pages/quiz.html">Quiz</a>
+</li>
+
+<li>
+<a href="../../pages/about.html">About</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<div class="course-container">
+
+<section class="course-hero">
+
+<div class="course-content">
+
+<h1>
+🌌 Galaxies
+</h1>
+
+<p>
+
+Explore the enormous systems of stars, gas, dust, and
+dark matter that fill the universe. Discover the different
+types of galaxies, learn about our Milky Way, and see how
+galaxies form, evolve, interact, and organize themselves
+across the cosmic web.
+
+</p>
+
+<div class="course-badges">
+
+<span class="course-badge">
+📈 Intermediate
+</span>
+
+<span class="course-badge">
+📚 8 Lessons
+</span>
+
+<span class="course-badge">
+🏆 Certificate
+</span>
+
+</div>
+
+</div>
+
+<div class="course-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Andromeda%20Galaxy%20%28with%20h-alpha%29.jpg"
+alt="Andromeda Galaxy">
+
+</div>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+📖 About This Course
+</h2>
+
+<p>
+
+Galaxies are among the largest structures in the universe.
+They contain billions or even trillions of stars together
+with gas, dust, dark matter, and other cosmic objects.
+
+In this course, you will explore how galaxies are classified,
+how their structures differ, and how astronomers study them
+across enormous distances.
+
+You will also discover our home galaxy, the Milky Way,
+the role of supermassive black holes, and the processes
+that shape galaxies throughout cosmic history.
+
+</p>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+🎯 What You Will Learn
+</h2>
+
+<ul class="learning-list">
+
+<li>
+What galaxies are and what they contain
+</li>
+
+<li>
+How astronomers classify different types of galaxies
+</li>
+
+<li>
+The structure and properties of spiral galaxies
+</li>
+
+<li>
+How elliptical and irregular galaxies differ
+</li>
+
+<li>
+The structure and location of our Milky Way
+</li>
+
+<li>
+How supermassive black holes are connected to galaxies
+</li>
+
+<li>
+How galaxies form and evolve over cosmic time
+</li>
+
+<li>
+How galaxies are organized into groups, clusters, and the cosmic web
+</li>
+
+</ul>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+📊 Course Progress
+</h2>
+
+<p id="progressText">
+
+0 / 8 Lessons Completed
+
+</p>
+
+<div class="progress-container">
+
+<div
+class="progress-fill"
+id="courseProgress">
+</div>
+
+</div>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+📚 Course Lessons
+</h2>
+
+<div class="lesson-card" id="lesson1">
+
+<div>
+
+<h3>
+🌌 Lesson 1: What Are Galaxies?
+</h3>
+
+<p>
+Discover what galaxies are made of, how large they are,
+and why they are fundamental structures of the universe.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson1.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson2">
+
+<div>
+
+<h3>
+🌀 Lesson 2: Types of Galaxies
+</h3>
+
+<p>
+Learn how astronomers classify galaxies and explore
+the major galaxy shapes and structures.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson2.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson3">
+
+<div>
+
+<h3>
+🌠 Lesson 3: Spiral Galaxies
+</h3>
+
+<p>
+Explore spiral arms, galactic disks, bulges, and the
+processes that make spiral galaxies so fascinating.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson3.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson4">
+
+<div>
+
+<h3>
+🔵 Lesson 4: Elliptical & Irregular Galaxies
+</h3>
+
+<p>
+Discover the properties of elliptical and irregular
+galaxies and how they differ from spiral galaxies.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson4.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson5">
+
+<div>
+
+<h3>
+🌌 Lesson 5: The Milky Way
+</h3>
+
+<p>
+Explore our home galaxy, its structure, location,
+stars, and our position within it.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson5.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson6">
+
+<div>
+
+<h3>
+🕳️ Lesson 6: Supermassive Black Holes
+</h3>
+
+<p>
+Learn about the enormous black holes found at the
+centers of many galaxies and their powerful effects.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson6.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson7">
+
+<div>
+
+<h3>
+🔭 Lesson 7: Galaxy Formation & Evolution
+</h3>
+
+<p>
+Discover how galaxies form, grow, collide, merge,
+and change throughout cosmic history.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson7.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+<div class="lesson-card" id="lesson8">
+
+<div>
+
+<h3>
+🌌 Lesson 8: Galaxy Groups, Clusters & the Cosmic Web
+</h3>
+
+<p>
+Explore how galaxies gather into groups and clusters
+and form the enormous structure known as the cosmic web.
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+href="lesson8.html">
+
+Start Lesson
+
+</a>
+
+</div>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+🧠 Skills You Will Gain
+</h2>
+
+<ul class="learning-list">
+
+<li>
+Identifying the major types of galaxies
+</li>
+
+<li>
+Understanding basic galactic structure
+</li>
+
+<li>
+Understanding the structure of the Milky Way
+</li>
+
+<li>
+Connecting galaxies with supermassive black holes
+</li>
+
+<li>
+Understanding galaxy formation and evolution
+</li>
+
+<li>
+Recognizing large-scale structures in the universe
+</li>
+
+</ul>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+📝 Final Exam
+</h2>
+
+<div
+class="exam-card"
+id="examCard">
+
+<div>
+
+<h3>
+🔒 Course 4 Final Exam
+</h3>
+
+<p id="examStatus">
+
+Complete all 8 lessons to unlock the final exam.
+
+</p>
+
+</div>
+
+<a
+class="lesson-btn"
+id="examBtn">
+
+🔒 Exam Locked
+
+</a>
+
+</div>
+
+</section>
+
+<section class="course-section">
+
+<h2>
+🏆 Certificate Requirements
+</h2>
+
+<p>
+
+To earn your AstroLearn certificate, you must complete
+all eight lessons and successfully pass the final exam
+with a score of at least 70%.
+
+</p>
+
+</section>
+
+</div>
+
+<footer class="footer">
+
+<h3>
+🌌 AstroLearn
+</h3>
+
+<p>
+Your Journey Through Space Begins Here.
+</p>
+
+</footer>
+
+<script>
+
+const lessonData = [
+
+{
+id: "course4Lesson1",
+card: "lesson1",
+file: "lesson1.html"
+},
+
+{
+id: "course4Lesson2",
+card: "lesson2",
+file: "lesson2.html"
+},
+
+{
+id: "course4Lesson3",
+card: "lesson3",
+file: "lesson3.html"
+},
+
+{
+id: "course4Lesson4",
+card: "lesson4",
+file: "lesson4.html"
+},
+
+{
+id: "course4Lesson5",
+card: "lesson5",
+file: "lesson5.html"
+},
+
+{
+id: "course4Lesson6",
+card: "lesson6",
+file: "lesson6.html"
+},
+
+{
+id: "course4Lesson7",
+card: "lesson7",
+file: "lesson7.html"
+},
+
+{
+id: "course4Lesson8",
+card: "lesson8",
+file: "lesson8.html"
+}
+
+];
+
+let completedLessons = 0;
+
+lessonData.forEach(lesson => {
+
+const card =
+document.getElementById(lesson.card);
+
+const button =
+card.querySelector(".lesson-btn");
+
+if(localStorage.getItem(lesson.id) === "true"){
+
+completedLessons++;
+
+card.classList.add("completed");
+
+button.innerHTML = "✓ Completed";
+
+button.href = lesson.file;
+
+}
+
+});
+
+const percentage =
+(completedLessons / 8) * 100;
+
+document.getElementById("courseProgress")
+.style.width = percentage + "%";
+
+document.getElementById("progressText")
+.textContent =
+completedLessons + " / 8 Lessons Completed";
+
+const examCard =
+document.getElementById("examCard");
+
+const examBtn =
+document.getElementById("examBtn");
+
+const examStatus =
+document.getElementById("examStatus");
+
+if(completedLessons === 8){
+
+examCard.classList.add("unlocked");
+
+examBtn.innerHTML =
+"📝 Take Final Exam";
+
+examBtn.href =
+"exam.html";
+
+examStatus.innerHTML =
+"🎉 All 8 lessons completed! Your final exam is ready.";
+
+}
+
+</script>
+
+<script src="../../script.js"></script>
+
+</body>
+
+</html>

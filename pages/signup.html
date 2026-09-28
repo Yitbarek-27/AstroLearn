@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn | Sign Up</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="login-page">
+
+<div class="login-box">
+
+<h1>🌌 Create Account</h1>
+
+<p>Join AstroLearn and begin your journey through space.</p>
+
+<form id="signupForm">
+
+<input
+    type="text"
+    id="name"
+    placeholder="Full Name"
+    required
+>
+
+<input
+    type="email"
+    id="email"
+    placeholder="Email Address"
+    required
+>
+
+<input
+    type="password"
+    id="password"
+    placeholder="Create Password"
+    required
+>
+
+<input
+    type="password"
+    id="confirmPassword"
+    placeholder="Confirm Password"
+    required
+>
+
+<button type="submit">
+    Create Account
+</button>
+
+<p id="signupMessage"
+   style="margin-top:15px; font-weight:bold;">
+</p>
+
+</form>
+
+<p class="signup-link">
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+
+<script>
+
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const message = document.getElementById("signupMessage");
+
+    /* Check that passwords match */
+
+    if (password !== confirmPassword) {
+
+        message.textContent = "❌ Passwords do not match.";
+        message.style.color = "#ff6b6b";
+
+        return;
+    }
+
+    /* Get existing account */
+
+    const existingUser = JSON.parse(localStorage.getItem("astroLearnUser"));
+
+    if (existingUser && existingUser.email === email) {
+
+        message.textContent = "❌ An account with this email already exists.";
+        message.style.color = "#ff6b6b";
+
+        return;
+    }
+
+    /* Create account */
+
+    const user = {
+        name: name,
+        email: email,
+        password: password
+    };
+
+    localStorage.setItem("astroLearnUser", JSON.stringify(user));
+
+    /* Log the student in */
+
+localStorage.setItem("astroLearnLoggedIn", "true");
+
+localStorage.setItem(
+    "astroLearnCurrentUser",
+    email
+);
+
+localStorage.setItem(
+    "studentName",
+    name
+);
+
+    message.textContent = "🎉 Account created successfully!";
+
+    message.style.color = "#4ade80";
+
+    /* Go to Courses page */
+
+    setTimeout(function() {
+
+        window.location.href = "dashboard.html";
+
+    }, 800);
+
+});
+
+</script>
+
+</body>
+
+</html>

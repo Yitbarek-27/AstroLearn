@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn | Login</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<section class="login-page">
+
+<div class="login-box">
+
+<h1>🌌 AstroLearn</h1>
+
+<p>Your Journey Through Space Begins Here.</p>
+
+<form id="loginForm">
+
+<input
+    type="email"
+    id="loginEmail"
+    placeholder="Email Address"
+    required
+>
+
+<input
+    type="password"
+    id="loginPassword"
+    placeholder="Password"
+    required
+>
+
+<button type="submit">
+    Log In
+</button>
+
+<p
+    id="loginMessage"
+    style="margin-top:15px;font-weight:bold;"
+></p>
+
+</form>
+
+<p class="signup-link">
+
+Don't have an account?
+
+<a href="signup.html">Sign Up</a>
+
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const password =
+        document.getElementById("loginPassword")
+        .value;
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    /* Get saved account */
+
+    const savedUser =
+        JSON.parse(
+            localStorage.getItem("astroLearnUser")
+        );
+
+
+    /* Check account */
+
+    if(!savedUser){
+
+        message.textContent =
+            "❌ No AstroLearn account found. Please sign up first.";
+
+        message.style.color = "#ff6b6b";
+
+        return;
+
+    }
+
+
+    /* Check email and password */
+
+    if(
+        savedUser.email !== email ||
+        savedUser.password !== password
+    ){
+
+        message.textContent =
+            "❌ Incorrect email or password.";
+
+        message.style.color = "#ff6b6b";
+
+        return;
+
+    }
+
+
+    /* Successful login */
+
+    localStorage.setItem(
+        "astroLearnLoggedIn",
+        "true"
+    );
+
+    localStorage.setItem(
+        "astroLearnCurrentUser",
+        savedUser.email
+    );
+
+    localStorage.setItem(
+        "studentName",
+        savedUser.name
+    );
+
+
+    message.textContent =
+        "✅ Login successful!";
+
+    message.style.color =
+        "#4ade80";
+
+
+    /* Go to dashboard */
+
+    setTimeout(function(){
+
+        window.location.href = "dashboard.html";
+
+    }, 600);
+
+});
+
+</script>
+
+</body>
+
+</html>

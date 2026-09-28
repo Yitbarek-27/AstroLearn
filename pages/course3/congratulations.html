@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations | Life Cycle of Stars</title>
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+.congrats-container{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 25px 60px;
+}
+
+.congrats-card{
+    max-width:800px;
+    width:100%;
+    text-align:center;
+    padding:55px 35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.congrats-icon{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.congrats-card h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.congrats-card h2{
+    font-size:1.5rem;
+    margin-bottom:25px;
+}
+
+.score-box{
+    margin:25px auto;
+    padding:20px;
+    max-width:350px;
+    border-radius:15px;
+    background:rgba(34,197,94,.12);
+    border:1px solid rgba(34,197,94,.3);
+}
+
+.score-box strong{
+    font-size:2rem;
+}
+
+.certificate-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.certificate-btn:hover{
+    transform:translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">AstroLearn</div>
+
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/courses.html">Courses</a>
+        <a href="../../pages/explore.html">Explore</a>
+        <a href="../../pages/quiz.html">Quiz</a>
+        <a href="../../pages/about.html">About</a>
+        <a href="../../pages/login.html">Login</a>
+    </div>
+</nav>
+
+<div class="congrats-container">
+
+<div class="congrats-card">
+
+    <div class="congrats-icon">🎉</div>
+
+    <h1>Congratulations!</h1>
+
+    <h2>You successfully completed Life Cycle of Stars</h2>
+
+    <p>
+        Excellent work! You have completed all 8 lessons and successfully
+        passed the final exam.
+    </p>
+
+    <div class="score-box">
+        <p>Your Final Exam Score</p>
+        <strong id="score">--/20</strong>
+        <p id="percentage">--%</p>
+    </div>
+
+    <p>
+        You are now ready to receive your official AstroLearn certificate
+        for Mission 3.
+    </p>
+
+    <a href="certificate.html" class="certificate-btn">
+        🏆 View Certificate
+    </a>
+
+</div>
+
+</div>
+
+<script>
+
+if(localStorage.getItem("course3ExamPassed") !== "true"){
+    window.location.href = "course.html";
+}
+
+const score =
+    localStorage.getItem("course3ExamScore") || "0";
+
+const percentage =
+    Math.round((Number(score) / 20) * 100);
+
+document.getElementById("score").textContent =
+    score + "/20";
+
+document.getElementById("percentage").textContent =
+    percentage + "%";
+
+let certificateID =
+    localStorage.getItem("course3CertificateID");
+
+if(!certificateID){
+
+    certificateID =
+        "ASTRO-M3-" +
+        Date.now().toString().slice(-8);
+
+    localStorage.setItem(
+        "course3CertificateID",
+        certificateID
+    );
+}
+
+localStorage.setItem(
+    "course3Name",
+    "Life Cycle of Stars"
+);
+
+localStorage.setItem(
+    "course3MissionName",
+    "Mission 3"
+);
+
+</script>
+
+</body>
+</html>

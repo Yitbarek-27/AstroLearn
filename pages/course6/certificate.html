@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn Certificate</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("course6ExamPassed")!="true"){
+    window.location.href="course.html";
+}
+
+</script>
+
+<div class="certificate-page">
+
+    <canvas
+    id="certificateCanvas"
+    width="1536"
+    height="1024">
+    </canvas>
+
+    <br><br>
+
+    <button class="complete-btn" onclick="downloadCertificate()">
+        📥 Download Certificate
+    </button>
+
+    <button class="complete-btn" onclick="window.print()">
+        🖨 Print Certificate
+    </button>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("certificateCanvas");
+const ctx = canvas.getContext("2d");
+
+const certificate = new Image();
+
+certificate.src = "../../assets/images/certificate-template.png";
+
+const signature = new Image();
+signature.src = "../../assets/images/signature.png";
+
+certificate.onload = function () {
+
+    signature.onload = function () {
+
+        // Draw template
+        ctx.drawImage(certificate, 0, 0, canvas.width, canvas.height);
+
+        // Draw signature
+        ctx.drawImage(signature, 620, 780, 300, 90);
+
+        // Student
+        let student =
+        localStorage.getItem("studentName") || "Student Name";
+
+        // Course
+        let course = "Cosmology";
+
+        // Date
+        const options = {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        };
+
+        let date = new Date().toLocaleDateString("en-US", options);
+
+        // Certificate ID
+        let id = localStorage.getItem("course6CertificateID");
+
+        if (!id) {
+
+            const year = new Date().getFullYear().toString().slice(-2);
+            const random = Math.floor(1000 + Math.random() * 9000);
+
+            id = `ALA${year}-${random}`;
+
+            localStorage.setItem("course6CertificateID", id);
+
+        }
+
+        // ================= STUDENT NAME =================
+
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#112240";
+
+        let size = 62;
+
+        ctx.font = `italic bold ${size}px Georgia`;
+
+        while(ctx.measureText(student).width > 900 && size > 35){
+
+            size -= 2;
+
+            ctx.font = `italic bold ${size}px Georgia`;
+
+        }
+
+        ctx.fillText(student, canvas.width / 2, 435);
+
+        // ================= COURSE =================
+
+        ctx.fillStyle = "#c9981c";
+
+        let courseSize = 32;
+
+        ctx.font = `bold ${courseSize}px Georgia`;
+
+        while(ctx.measureText(course).width > 700 && courseSize > 22){
+
+            courseSize -= 2;
+
+            ctx.font = `bold ${courseSize}px Georgia`;
+
+        }
+
+        ctx.fillText(course, canvas.width / 2, 692);
+
+        // ================= DATE =================
+
+        ctx.fillStyle = "#1f2937";
+        ctx.font = "26px Poppins";
+
+        ctx.fillText(date, 433, 873);
+
+        // ================= CERTIFICATE ID =================
+
+        ctx.fillText(id, 1085, 873);
+
+    };
+
+};
+
+function downloadCertificate(){
+
+    const link=document.createElement("a");
+
+    link.download="AstroLearn-Certificate-Cosmology.png";
+
+    link.href = canvas.toDataURL("image/png",1.0);
+
+    link.click();
+
+}
+
+</script>
+
+</body>
+
+</html>

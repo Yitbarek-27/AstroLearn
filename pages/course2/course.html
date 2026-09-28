@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroLearn | Solar System Explorer</title>
+
+<link rel="stylesheet" href="../../style.css">
+
+<style>
+
+.course-container{
+    max-width:1200px;
+    margin:130px auto;
+    padding:40px;
+}
+
+
+.course-hero{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+
+    background:#111c2f;
+
+    padding:50px;
+
+    border-radius:25px;
+
+}
+
+
+.course-content{
+
+    flex:1;
+
+}
+
+
+.course-content h1{
+
+    font-size:3.2rem;
+    color:#fbbf24;
+    margin-bottom:20px;
+
+}
+
+
+.course-content p{
+
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:18px;
+
+}
+
+
+.course-image{
+
+    flex:1;
+    text-align:center;
+
+}
+
+
+.course-image img{
+
+    width:100%;
+    max-width:500px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+}
+
+
+
+.course-badges{
+
+    margin-top:25px;
+
+}
+
+
+.course-badge{
+
+    display:inline-block;
+
+    background:#2563eb;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    margin:5px;
+
+    font-size:14px;
+
+}
+
+
+
+.course-section{
+
+    margin-top:50px;
+
+    background:#111c2f;
+
+    padding:40px;
+
+    border-radius:25px;
+
+}
+
+
+.course-section h2{
+
+    color:#60a5fa;
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+
+}
+
+
+
+.course-section p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+
+.learning-list li{
+
+    margin:15px 0;
+
+    color:#d1d5db;
+
+}
+
+
+
+.progress-container{
+
+    width:100%;
+
+    height:10px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#2563eb;
+
+}
+
+
+
+.lesson-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#162338;
+
+    padding:25px;
+
+    margin:20px 0;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+
+
+.lesson-card:hover{
+
+    transform:translateX(8px);
+
+    background:#1e3a5f;
+
+}
+
+
+
+.lesson-card h3{
+
+    margin-bottom:8px;
+
+}
+
+
+
+.lesson-card p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+.lesson-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+}
+
+
+
+.locked{
+
+    opacity:.6;
+
+}
+
+
+
+.locked span{
+
+    font-size:25px;
+
+}
+
+
+
+@media(max-width:900px){
+
+.course-hero{
+
+    flex-direction:column;
+
+}
+
+
+.course-content h1{
+
+    font-size:2.5rem;
+
+}
+
+}
+
+.lesson-card.completed {
+    background: #14532d;
+}
+
+.lesson-card.completed .lesson-btn {
+    background: #16a34a;
+}
+
+.exam-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    background:#162338;
+    padding:30px;
+    margin-top:30px;
+    border-radius:20px;
+    border:1px solid #263a59;
+    transition:.3s;
+}
+
+.exam-card h3{
+    color:#fbbf24;
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.exam-card p{
+    color:#cbd5e1;
+}
+
+.exam-card.unlocked{
+    background:#12291f;
+    border:1px solid #22c55e;
+}
+
+.exam-card.unlocked h3{
+    color:#4ade80;
+}
+
+@media(max-width:700px){
+    .exam-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<script>
+// Course 2 is temporarily unlocked while building the website.
+</script>
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">🌌 AstroLearn</h2>
+
+<ul class="nav-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../pages/courses.html">Learn</a></li>
+    <li><a href="../../pages/explore.html">Explore</a></li>
+    <li><a href="../../pages/quiz.html">Quiz</a></li>
+    <li><a href="../../pages/about.html">About</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+
+<div class="course-container">
+
+
+<section class="course-hero">
+
+
+<div class="course-content">
+
+
+<h1>
+🌞 Solar System Explorer
+</h1>
+
+
+<p>
+
+Explore our cosmic neighborhood and discover
+the Sun, planets, moons, asteroids, comets,
+and the fascinating science behind our Solar System.
+
+</p>
+
+
+<div class="course-badges">
+
+<span class="course-badge">
+🌱 Beginner
+</span>
+
+
+<span class="course-badge">
+📚 8 Lessons
+</span>
+
+
+<span class="course-badge">
+🏆 Certificate
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<div class="course-image">
+
+
+<img src="https://images-assets.nasa.gov/image/PIA03149/PIA03149~large.jpg">
+
+
+</div>
+
+
+</section>
+
+
+<section class="course-section">
+
+
+<h2>
+📖 About This Course
+</h2>
+
+
+<p>
+
+The Solar System is our home in space.
+In this course, students will travel through
+the planets, explore the Sun, understand
+planetary systems, and discover the smaller
+objects that shape our cosmic environment.
+
+This course introduces astronomy concepts
+through scientific explanations, discoveries,
+and real space missions.
+
+</p>
+
+
+</section>
+
+
+<section class="course-section">
+
+
+<h2>
+🎯 What You Will Learn
+</h2>
+
+
+<ul class="learning-list">
+
+<li>How the Solar System formed 4.6 billion years ago</li>
+
+<li>The structure and activity of the Sun</li>
+
+<li>The characteristics of all eight planets</li>
+
+<li>The importance of moons, asteroids, and comets</li>
+
+<li>The mysteries of the outer Solar System</li>
+
+<li>How scientists explore planets using spacecraft</li>
+
+</ul>
+
+
+</section>
+<section class="course-section">
+
+
+<h2>
+📊 Course Progress
+</h2>
+
+
+<p id="progressText">
+
+0 / 8 Lessons Completed
+
+</p>
+
+
+<div class="progress-container">
+
+<div class="progress-fill" id="courseProgress"></div>
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="course-section">
+
+    <h2>📚 Course Lessons</h2>
+
+    <!-- LESSON 1 -->
+    <div class="lesson-card" id="lesson1">
+        <div>
+            <h3>🌌 Lesson 1: Introduction to the Solar System</h3>
+            <p>
+                Discover how our Solar System formed and explore our place in the universe.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson1.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 2 -->
+    <div class="lesson-card" id="lesson2">
+        <div>
+            <h3>☀️ Lesson 2: The Sun - Our Star</h3>
+            <p>
+                Learn about nuclear fusion, solar layers, and solar activity.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson2.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 3 -->
+    <div class="lesson-card" id="lesson3">
+        <div>
+            <h3>☿️ Lesson 3: Mercury and Venus</h3>
+            <p>
+                Explore the closest planets to the Sun and their extreme environments.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson3.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 4 -->
+    <div class="lesson-card" id="lesson4">
+        <div>
+            <h3>🌍 Lesson 4: Earth and Mars</h3>
+            <p>
+                Discover Earth's uniqueness and the search for life on Mars.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson4.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 5 -->
+    <div class="lesson-card" id="lesson5">
+        <div>
+            <h3>♃ Lesson 5: Jupiter and Saturn</h3>
+            <p>
+                Study the largest planets and their amazing moons and rings.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson5.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 6 -->
+    <div class="lesson-card" id="lesson6">
+        <div>
+            <h3>♅ Lesson 6: Uranus and Neptune</h3>
+            <p>
+                Explore the distant ice giants of our Solar System.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson6.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 7 -->
+    <div class="lesson-card" id="lesson7">
+        <div>
+            <h3>🌑 Lesson 7: Dwarf Planets and Small Bodies</h3>
+            <p>
+                Learn about Pluto, asteroids, meteoroids, and comets.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson7.html">
+            Start Lesson
+        </a>
+    </div>
+
+
+    <!-- LESSON 8 -->
+    <div class="lesson-card" id="lesson8">
+        <div>
+            <h3>🚀 Lesson 8: Beyond the Solar System</h3>
+            <p>
+                Explore the Kuiper Belt, Oort Cloud, and future space exploration.
+            </p>
+        </div>
+
+        <a class="lesson-btn" href="lesson8.html">
+            Start Lesson
+        </a>
+    </div>
+
+    <div id="finalExamSection" class="course-section" style="display:none; text-align:center;">
+
+        <h2>🎓 Final Examination</h2>
+
+        <p>
+            Congratulations! You have completed all 8 lessons.
+            You can now take the Solar System Explorer final examination.
+        </p>
+
+        <a href="exam.html" class="lesson-btn">
+        📝 Take Final Exam
+        </a>
+
+    </div>
+</section>
+
+
+<section class="course-section">
+
+
+<h2>
+🧠 Skills You Will Gain
+</h2>
+
+
+<ul class="learning-list">
+
+
+<li>
+Understanding planetary science concepts
+</li>
+
+
+<li>
+Learning how astronomers study planets
+</li>
+
+
+<li>
+Analyzing space missions and discoveries
+</li>
+
+
+<li>
+Building a foundation in astronomy
+</li>
+
+
+</ul>
+
+
+</section>
+
+<section class="course-section">
+
+    <h2>📝 Final Exam</h2>
+
+    <div class="exam-card" id="examCard">
+
+        <div>
+            <h3>🔒 Course 2 Final Exam</h3>
+
+            <p id="examStatus">
+                Complete all 8 lessons to unlock the final exam.
+            </p>
+        </div>
+
+        <a class="lesson-btn" id="examBtn">
+            🔒 Exam Locked
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="course-section">
+
+
+<h2>
+🏆 Certificate Requirements
+</h2>
+
+
+<p>
+
+To earn your AstroLearn certificate,
+students must complete all eight lessons and successfully
+complete the final exam.
+
+</p>
+
+
+</section>
+
+</div>
+
+<script>
+
+const lessonData = [
+
+    {
+        id: "course2Lesson1",
+        card: "lesson1",
+        file: "lesson1.html"
+    },
+
+    {
+        id: "course2Lesson2",
+        card: "lesson2",
+        file: "lesson2.html"
+    },
+
+    {
+        id: "course2Lesson3",
+        card: "lesson3",
+        file: "lesson3.html"
+    },
+
+    {
+        id: "course2Lesson4",
+        card: "lesson4",
+        file: "lesson4.html"
+    },
+
+    {
+        id: "course2Lesson5",
+        card: "lesson5",
+        file: "lesson5.html"
+    },
+
+    {
+        id: "course2Lesson6",
+        card: "lesson6",
+        file: "lesson6.html"
+    },
+
+    {
+        id: "course2Lesson7",
+        card: "lesson7",
+        file: "lesson7.html"
+    },
+
+    {
+        id: "course2Lesson8",
+        card: "lesson8",
+        file: "lesson8.html"
+    }
+
+];
+
+
+let completedLessons = 0;
+
+
+// Check every lesson
+
+lessonData.forEach(lesson => {
+
+    const card = document.getElementById(lesson.card);
+
+    const button = card.querySelector(".lesson-btn");
+
+
+    if(localStorage.getItem(lesson.id) === "true") {
+
+        completedLessons++;
+
+        card.classList.add("completed");
+
+        button.innerHTML = "✓ Completed";
+
+        button.href = lesson.file;
+
+    }
+
+});
+
+
+// Update progress
+
+let percentage = (completedLessons / 8) * 100;
+
+document.getElementById("courseProgress").style.width =
+    percentage + "%";
+
+document.getElementById("progressText").textContent =
+    completedLessons + " / 8 Lessons Completed";
+
+if (completedLessons === 8) {
+
+    document.getElementById("finalExamSection").style.display =
+        "block";
+
+}
+// Final Exam
+
+const examCard = document.getElementById("examCard");
+
+const examBtn = document.getElementById("examBtn");
+
+const examStatus = document.getElementById("examStatus");
+
+
+if(completedLessons === 8){
+
+    examCard.classList.add("unlocked");
+
+    examBtn.innerHTML = "📝 Take Final Exam";
+
+    examBtn.href = "exam.html";
+
+    examStatus.innerHTML =
+        "🎉 All 8 lessons completed! Your final exam is ready.";
+
+}
+
+</script>
+
+<script src="../../script.js"></script>
+
+</body>
+
+</html>
