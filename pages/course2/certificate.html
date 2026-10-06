@@ -16,49 +16,121 @@
 
 <script>
 
-if(localStorage.getItem("course2ExamPassed")!="true"){
-    window.location.href="course.html";
+if(localStorage.getItem("course2ExamPassed") !== "true"){
+    window.location.href = "course.html";
 }
 
 </script>
 
+
 <div class="certificate-page">
 
     <canvas
-    id="certificateCanvas"
-    width="1536"
-    height="1024">
+        id="certificateCanvas"
+        width="1536"
+        height="1024">
     </canvas>
 
     <br><br>
 
-    <button class="complete-btn" onclick="downloadCertificate()">
+    <button
+        id="downloadBtn"
+        class="complete-btn"
+        onclick="downloadCertificate()"
+        disabled>
         📥 Download Certificate
     </button>
 
-    <button class="complete-btn" onclick="window.print()">
+    <button
+        class="complete-btn"
+        onclick="window.print()">
         🖨 Print Certificate
     </button>
 
 </div>
 
+
 <script>
 
-const canvas = document.getElementById("certificateCanvas");
-const ctx = canvas.getContext("2d");
+const canvas =
+    document.getElementById("certificateCanvas");
 
-const certificate = new Image();
+const ctx =
+    canvas.getContext("2d");
 
-certificate.src = "../../assets/images/certificate-template.png";
+const downloadBtn =
+    document.getElementById("downloadBtn");
 
-const signature = new Image();
-signature.src = "../../assets/images/signature.png";
 
-certificate.onload = function () {
+/* =====================================================
+   LOAD IMAGE SAFELY
+===================================================== */
 
-    signature.onload = function () {
+function loadImage(src){
 
-        // Draw template
+    return new Promise((resolve, reject) => {
+
+        const image = new Image();
+
+        image.onload = function(){
+            resolve(image);
+        };
+
+        image.onerror = function(){
+            reject(
+                new Error("Failed to load: " + src)
+            );
+        };
+
+        image.src = src;
+
+    });
+
+}
+
+
+/* =====================================================
+   GENERATE CERTIFICATE
+===================================================== */
+
+async function generateCertificate(){
+
+    try{
+
+        downloadBtn.disabled = true;
+
+
+        /* =========================
+           LOAD BOTH IMAGES
+        ========================= */
+
+        const certificate =
+            await loadImage(
+                "../../assets/images/certificate-template.png"
+            );
+
+        const signature =
+            await loadImage(
+                "../../assets/images/signature.png"
+            );
+
+
+        /* =========================
+           CLEAR CANVAS
+        ========================= */
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        /* =========================
+           TEMPLATE
+        ========================= */
+
         ctx.drawImage(
             certificate,
             0,
@@ -67,7 +139,11 @@ certificate.onload = function () {
             canvas.height
         );
 
-        // Draw signature
+
+        /* =========================
+           SIGNATURE
+        ========================= */
+
         ctx.drawImage(
             signature,
             620,
@@ -76,68 +152,31 @@ certificate.onload = function () {
             90
         );
 
-        // Student
-        let student =
-            localStorage.getItem("studentName") || "Student Name";
 
-        // Course
-        let course =
-            localStorage.getItem("course2Name") ||
-            "Solar System Explorer";
+        /* =========================
+           STUDENT
+        ========================= */
 
-        // Date
-        const options = {
-            day: "2-digit",
-            month: "short",
-            year: "numeric"
-        };
+        const student =
+            localStorage.getItem("studentName")
+            || "Student Name";
 
-        let date =
-            new Date().toLocaleDateString(
-                "en-US",
-                options
-            );
-
-        // Certificate ID
-        let id =
-            localStorage.getItem("course2CertificateID");
-
-        if (!id) {
-
-            const year =
-                new Date()
-                .getFullYear()
-                .toString()
-                .slice(-2);
-
-            const random =
-                Math.floor(
-                    1000 + Math.random() * 9000
-                );
-
-            id = `ALA${year}-${random}`;
-
-            localStorage.setItem(
-                "course2CertificateID",
-                id
-            );
-
-        }
-
-        // ================= STUDENT NAME =================
 
         ctx.textAlign = "center";
+
         ctx.fillStyle = "#112240";
+
 
         let size = 62;
 
         ctx.font =
             `italic bold ${size}px Georgia`;
 
-        while (
+
+        while(
             ctx.measureText(student).width > 900 &&
             size > 35
-        ) {
+        ){
 
             size -= 2;
 
@@ -146,25 +185,36 @@ certificate.onload = function () {
 
         }
 
+
         ctx.fillText(
             student,
             canvas.width / 2,
             435
         );
 
-        // ================= COURSE =================
+
+        /* =========================
+           COURSE
+        ========================= */
+
+        const course =
+            localStorage.getItem("course2Name")
+            || "Solar System Explorer";
+
 
         ctx.fillStyle = "#c9981c";
+
 
         let courseSize = 32;
 
         ctx.font =
             `bold ${courseSize}px Georgia`;
 
-        while (
+
+        while(
             ctx.measureText(course).width > 700 &&
             courseSize > 22
-        ) {
+        ){
 
             courseSize -= 2;
 
@@ -173,16 +223,36 @@ certificate.onload = function () {
 
         }
 
+
         ctx.fillText(
             course,
             canvas.width / 2,
             692
         );
 
-        // ================= DATE =================
+
+        /* =========================
+           DATE
+        ========================= */
+
+        const options = {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        };
+
+
+        const date =
+            new Date().toLocaleDateString(
+                "en-US",
+                options
+            );
+
 
         ctx.fillStyle = "#1f2937";
+
         ctx.font = "26px Poppins";
+
 
         ctx.fillText(
             date,
@@ -190,7 +260,43 @@ certificate.onload = function () {
             873
         );
 
-        // ================= CERTIFICATE ID =================
+
+        /* =========================
+           CERTIFICATE ID
+        ========================= */
+
+        let id =
+            localStorage.getItem(
+                "course2CertificateID"
+            );
+
+
+        if(!id){
+
+            const year =
+                new Date()
+                .getFullYear()
+                .toString()
+                .slice(-2);
+
+
+            const random =
+                Math.floor(
+                    1000 + Math.random() * 9000
+                );
+
+
+            id =
+                `ALA${year}-${random}`;
+
+
+            localStorage.setItem(
+                "course2CertificateID",
+                id
+            );
+
+        }
+
 
         ctx.fillText(
             id,
@@ -198,18 +304,61 @@ certificate.onload = function () {
             873
         );
 
-    };
 
-};
+        /* =========================
+           READY
+        ========================= */
 
+        downloadBtn.disabled = false;
+
+
+    }catch(error){
+
+        console.error(
+            "Certificate generation failed:",
+            error
+        );
+
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        ctx.textAlign = "center";
+
+        ctx.fillStyle = "#ffffff";
+
+        ctx.font = "28px Poppins";
+
+
+        ctx.fillText(
+            "Unable to load certificate. Please refresh the page.",
+            canvas.width / 2,
+            canvas.height / 2
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CERTIFICATE
+===================================================== */
 
 function downloadCertificate(){
 
     const link =
         document.createElement("a");
 
+
     link.download =
         "AstroLearn-Solar-System-Explorer-Certificate.png";
+
 
     link.href =
         canvas.toDataURL(
@@ -217,9 +366,17 @@ function downloadCertificate(){
             1.0
         );
 
+
     link.click();
 
 }
+
+
+/* =====================================================
+   START
+===================================================== */
+
+generateCertificate();
 
 </script>
 
