@@ -16,151 +16,348 @@
 
 <script>
 
-if(localStorage.getItem("certificateUnlocked")!="true"){
-    window.location.href="course1.html";
+if(localStorage.getItem("certificateUnlocked") !== "true"){
+    window.location.href = "course1.html";
 }
 
 </script>
 
+
 <div class="certificate-page">
 
     <canvas
-    id="certificateCanvas"
-    width="1536"
-    height="1024">
+        id="certificateCanvas"
+        width="1536"
+        height="1024">
     </canvas>
 
     <br><br>
 
-    <button class="complete-btn" onclick="downloadCertificate()">
+    <button
+        id="downloadBtn"
+        class="complete-btn"
+        onclick="downloadCertificate()"
+        disabled>
         📥 Download Certificate
     </button>
 
-    <button class="complete-btn" onclick="window.print()">
+    <button
+        class="complete-btn"
+        onclick="window.print()">
         🖨 Print Certificate
     </button>
 
 </div>
+
 
 <script>
 
 const canvas = document.getElementById("certificateCanvas");
 const ctx = canvas.getContext("2d");
 
-const certificate = new Image();
+const downloadBtn = document.getElementById("downloadBtn");
 
-certificate.src = "../assets/images/certificate-template.png";
 
-const signature = new Image();
-signature.src = "../assets/images/signature.png";
+/* =====================================================
+   LOAD IMAGE SAFELY
+===================================================== */
 
-certificate.onload = function () {
+function loadImage(src){
 
-    signature.onload = function () {
+    return new Promise((resolve, reject) => {
 
-        // Draw template
-        ctx.drawImage(certificate, 0, 0, canvas.width, canvas.height);
+        const image = new Image();
 
-        // Draw signature
-        ctx.drawImage(signature, 620, 780, 300, 90);
+        image.onload = () => resolve(image);
 
-        // Student
-        let student =
-        localStorage.getItem("studentName") || "Student Name";
+        image.onerror = () => reject(
+            new Error("Failed to load: " + src)
+        );
 
-        // Course
-        let course =
-        localStorage.getItem("courseName") || "Introduction to Astronomy";
+        image.src = src;
 
-        // Date
+    });
+
+}
+
+
+/* =====================================================
+   DRAW CERTIFICATE
+===================================================== */
+
+async function generateCertificate(){
+
+    try{
+
+        downloadBtn.disabled = true;
+
+        const certificate = await loadImage(
+            "../assets/images/certificate-template.png"
+        );
+
+        const signature = await loadImage(
+            "../assets/images/signature.png"
+        );
+
+
+        /* =========================
+           CLEAR CANVAS
+        ========================= */
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        /* =========================
+           TEMPLATE
+        ========================= */
+
+        ctx.drawImage(
+            certificate,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        /* =========================
+           SIGNATURE
+        ========================= */
+
+        ctx.drawImage(
+            signature,
+            620,
+            780,
+            300,
+            90
+        );
+
+
+        /* =========================
+           STUDENT NAME
+        ========================= */
+
+        const student =
+            localStorage.getItem("studentName")
+            || "Student Name";
+
+
+        ctx.textAlign = "center";
+
+        ctx.fillStyle = "#112240";
+
+
+        let size = 62;
+
+        ctx.font =
+            `italic bold ${size}px Georgia`;
+
+
+        while(
+            ctx.measureText(student).width > 900 &&
+            size > 35
+        ){
+
+            size -= 2;
+
+            ctx.font =
+                `italic bold ${size}px Georgia`;
+
+        }
+
+
+        ctx.fillText(
+            student,
+            canvas.width / 2,
+            435
+        );
+
+
+        /* =========================
+           COURSE
+        ========================= */
+
+        const course =
+            localStorage.getItem("courseName")
+            || "Introduction to Astronomy";
+
+
+        ctx.fillStyle = "#c9981c";
+
+
+        let courseSize = 32;
+
+        ctx.font =
+            `bold ${courseSize}px Georgia`;
+
+
+        while(
+            ctx.measureText(course).width > 700 &&
+            courseSize > 22
+        ){
+
+            courseSize -= 2;
+
+            ctx.font =
+                `bold ${courseSize}px Georgia`;
+
+        }
+
+
+        ctx.fillText(
+            course,
+            canvas.width / 2,
+            692
+        );
+
+
+        /* =========================
+           DATE
+        ========================= */
+
         const options = {
             day: "2-digit",
             month: "short",
             year: "numeric"
         };
 
-        let date = new Date().toLocaleDateString("en-US", options);
 
-        // Certificate ID
-        let id = localStorage.getItem("certificateID");
+        const date =
+            new Date().toLocaleDateString(
+                "en-US",
+                options
+            );
 
-        if (!id) {
-
-            const year = new Date().getFullYear().toString().slice(-2);
-            const random = Math.floor(1000 + Math.random() * 9000);
-
-            id = `ALA${year}-${random}`;
-
-            localStorage.setItem("certificateID", id);
-
-        }
-
-        // ================= STUDENT NAME =================
-
-        ctx.textAlign = "center";
-        ctx.fillStyle = "#112240";
-
-        let size = 62;
-
-        ctx.font = `italic bold ${size}px Georgia`;
-
-        while(ctx.measureText(student).width > 900 && size > 35){
-
-            size -= 2;
-
-            ctx.font = `italic bold ${size}px Georgia`;
-
-        }
-
-        ctx.fillText(student, canvas.width / 2, 435);
-
-        // ================= COURSE =================
-
-        ctx.fillStyle = "#c9981c";
-
-        let courseSize = 32;
-
-        ctx.font = `bold ${courseSize}px Georgia`;
-
-        while(ctx.measureText(course).width > 700 && courseSize > 22){
-
-            courseSize -= 2;
-
-            ctx.font = `bold ${courseSize}px Georgia`;
-
-        }
-
-        ctx.fillText(course, canvas.width / 2, 692);
-
-        // ================= DATE =================
 
         ctx.fillStyle = "#1f2937";
+
         ctx.font = "26px Poppins";
 
-        ctx.fillText(date, 433, 873);
-
-        // ================= CERTIFICATE ID =================
-
-        ctx.fillText(id, 1085, 873);
-
-    };
-
-};
+        ctx.fillText(
+            date,
+            433,
+            873
+        );
 
 
+        /* =========================
+           CERTIFICATE ID
+        ========================= */
 
+        let id =
+            localStorage.getItem("certificateID");
+
+
+        if(!id){
+
+            const year =
+                new Date()
+                .getFullYear()
+                .toString()
+                .slice(-2);
+
+
+            const random =
+                Math.floor(
+                    1000 + Math.random() * 9000
+                );
+
+
+            id =
+                `ALA${year}-${random}`;
+
+
+            localStorage.setItem(
+                "certificateID",
+                id
+            );
+
+        }
+
+
+        ctx.fillText(
+            id,
+            1085,
+            873
+        );
+
+
+        /* =========================
+           ENABLE DOWNLOAD
+        ========================= */
+
+        downloadBtn.disabled = false;
+
+
+    }catch(error){
+
+        console.error(
+            "Certificate generation failed:",
+            error
+        );
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        ctx.textAlign = "center";
+
+        ctx.fillStyle = "#ffffff";
+
+        ctx.font = "28px Poppins";
+
+        ctx.fillText(
+            "Unable to load certificate. Please refresh the page.",
+            canvas.width / 2,
+            canvas.height / 2
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
 
 function downloadCertificate(){
 
-    const link=document.createElement("a");
+    const link =
+        document.createElement("a");
 
-    link.download="AstroLearn-Certificate.png";
 
-    link.href = canvas.toDataURL("image/png",1.0);
+    link.download =
+        "AstroLearn-Certificate.png";
+
+
+    link.href =
+        canvas.toDataURL(
+            "image/png",
+            1.0
+        );
+
 
     link.click();
 
 }
+
+
+/* =====================================================
+   START
+===================================================== */
+
+generateCertificate();
+
 </script>
 
 </body>
