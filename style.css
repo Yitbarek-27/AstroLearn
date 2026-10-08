@@ -2895,3 +2895,131 @@ button{
     }
 
 }
+/* ================= ASTROLEARN STATISTICS ================= */
+
+.stats-section {
+    padding: 85px 6%;
+    background: #05091a;
+    color: #ffffff;
+}
+
+.stats-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.stats-container > h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.stats-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 48px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    min-height: 175px;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #0b1120
+    );
+
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96, 165, 250, 0.65);
+    box-shadow: 0 14px 35px rgba(37, 99, 235, 0.12);
+}
+
+.stat-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    margin: 0 0 12px;
+    color: #60a5fa;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .stats-section {
+        padding: 65px 5%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .stats-section {
+        padding: 50px 5%;
+    }
+
+    .stats-subtitle {
+        margin-bottom: 30px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-height: 145px;
+        padding: 20px 10px;
+        border-radius: 16px;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.9rem;
+    }
+
+    .stat-card p {
+        font-size: 0.82rem;
+    }
+}
