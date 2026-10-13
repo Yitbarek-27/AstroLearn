@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,13 +11,14 @@
 
 <link rel="stylesheet" href="../style.css">
 
+    
 </head>
 
 <body class="login-page">
 
 <div class="login-box">
 
-<h1>🌌 Create Account</h1>
+<h1>ðŸŒŒ Create Account</h1>
 
 <p>Join AstroLearn and begin your journey through space.</p>
 
@@ -82,7 +85,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
     if (password !== confirmPassword) {
 
-        message.textContent = "❌ Passwords do not match.";
+        message.textContent = "âŒ Passwords do not match.";
         message.style.color = "#ff6b6b";
 
         return;
@@ -94,7 +97,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
     if (existingUser && existingUser.email === email) {
 
-        message.textContent = "❌ An account with this email already exists.";
+        message.textContent = "âŒ An account with this email already exists.";
         message.style.color = "#ff6b6b";
 
         return;
@@ -124,7 +127,7 @@ localStorage.setItem(
     name
 );
 
-    message.textContent = "🎉 Account created successfully!";
+    message.textContent = "ðŸŽ‰ Account created successfully!";
 
     message.style.color = "#4ade80";
 
@@ -143,3 +146,5 @@ localStorage.setItem(
 </body>
 
 </html>
+
+
